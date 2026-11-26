@@ -20,6 +20,20 @@ store = get_store()
 st.title("Gauge")
 st.caption("Every change is regression-tested; quality, cost and latency are visible per commit.")
 
+with st.expander("New here? What Gauge is, what it solves, how to read this page", expanded=True):
+    g1, g2, g3 = st.columns(3)
+    g1.markdown("#### What it is")
+    g1.write("A test harness for AI features. You write a set of example questions with expected answers; Gauge runs your AI app against "
+             "them on every code change and records the pass rate, cost and speed of each run.")
+    g2.markdown("#### Problem it solves")
+    g2.write("Changing a prompt or swapping a model can quietly make answers worse, and nobody notices until a customer does. Gauge turns "
+             "\"it feels fine\" into a number per commit and can fail a pull request when quality drops.")
+    g3.markdown("#### How to read this page")
+    g3.write("Top row: the latest run versus the one before (green is better). Charts: the trend across runs. Pick a run at the bottom to see "
+             "each failing case with the exact prompt, the output, and why it failed. Use the sidebar to switch suite or branch.")
+    st.caption("To use it on your own project: `pip install` Gauge, add a dataset file, run `gauge run`, and add the GitHub Action "
+               "(see the README). Judges that grade free-text answers use an LLM and are checked against 20 human-labelled examples.")
+
 suites = store.suites()
 if not suites:
     st.info("No runs yet. Upload one with `gauge run --server ...` or `gauge import`.")
