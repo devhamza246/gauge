@@ -40,13 +40,15 @@ def anthropic_provider(api_key: str | None = None, base_url: str = "https://api.
     def call(model: str, system: str, user: str) -> JudgeReply:
         if not key:
             raise JudgeError("ANTHROPIC_API_KEY is not set (judge mode needs it for uncached calls)")
-        response = httpx.post(
-            f"{base_url}/v1/messages",
-            headers={"x-api-key": key, "anthropic-version": "2023-06-01", "content-type": "application/json"},
-            json={"model": model, "max_tokens": 700, "system": system, "temperature": 0,
-                  "messages": [{"role": "user", "content": user}]},
-            timeout=60,
-        )
+        payload = {"model": model, "max_tokens": 700, "system": system, "temperature": 0,
+                   "messages": [{"role": "user", "content": user}]}
+        headers = {"x-api-key": key, "anthropic-version": "2023-06-01", "content-type": "application/json"}
+        response = httpx.post(f"{base_url}/v1/messages", headers=headers, json=payload, timeout=60)
+        if response.status_code == 400 and "temperature" in response.text.lower():
+            payload.pop("temperature")  # some models fix their own sampling; retry without it
+            response = httpx.post(f"{base_url}/v1/messages", headers=headers, json=payload, timeout=60)
+        if response.status_code == 401:
+            raise JudgeError("the Anthropic API rejected the key (401): check ANTHROPIC_API_KEY")
         if response.status_code >= 400:
             raise JudgeError(f"judge provider returned {response.status_code}: {response.text[:200]}")
         body = response.json()

@@ -11,6 +11,7 @@ import httpx
 
 from .compare import compare, render_markdown
 from .dataset import DatasetError
+from .judge import JudgeError
 from .models import RunResult, RunSummary
 from .runner import percentile, run_suite
 
@@ -118,12 +119,10 @@ def cmd_ci(args: argparse.Namespace) -> int:
 
 
 def cmd_calibrate(args: argparse.Namespace) -> int:
-    """Measure how often the judge agrees with human labels. Labels: JSONL of
-    {"id","input","output","expected"?,"context"?,"human_pass": bool} and a scorer from gauge.yml."""
+    """Measure how often the judge agrees with human labels (JSONL: id, output, human_pass, + the scorer's inputs)."""
+    from .calibrate import agreement, calibrate, render_report
     from .dataset import load_suite
     from .judge import Judge
-    from .models import Case
-    from .scorers import ScoreContext, get_scorer
     config = Path(args.config).resolve()
     suite = load_suite(config)
     judge = Judge.from_config(dict(suite.judge, **({"mode": args.judge_mode} if args.judge_mode else {})), config.parent)
@@ -131,20 +130,14 @@ def cmd_calibrate(args: argparse.Namespace) -> int:
     if spec is None:
         print("no llm_judge or rag_faithfulness scorer in the suite", file=sys.stderr)
         return 2
-    agree = total = 0
-    for line in Path(args.labels).read_text(encoding="utf-8").splitlines():
-        if not line.strip():
-            continue
-        item = json.loads(line)
-        case = Case(id=item["id"], input=item.get("input"), expected=item.get("expected"),
-                    rubric=item.get("rubric"), context=item.get("context"))
-        result = get_scorer(spec)(case, item["output"], ScoreContext(spec=spec, judge=judge))
-        same = result.passed == bool(item["human_pass"])
-        agree += same
-        total += 1
-        print(f"{'ok ' if same else 'DIFF'} {item['id']}: judge={result.passed} human={item['human_pass']} {result.reason[:90]}")
-    rate = agree / total if total else 0.0
-    print(f"agreement: {agree}/{total} = {rate:.0%} (target >= {args.target:.0%})")
+    rows = calibrate(args.labels, spec, judge)
+    for r in rows:
+        print(f"{'ok  ' if r.agrees else 'DIFF'} {r.case_id}: judge={r.judge_pass} human={r.human_pass} {r.reason[:90]}")
+    rate = agreement(rows)
+    print(f"agreement: {sum(r.agrees for r in rows)}/{len(rows)} = {rate:.0%} (target >= {args.target:.0%})")
+    if args.out:
+        Path(args.out).write_text(render_report(rows, judge.model, args.target), encoding="utf-8")
+        print(f"report written to {args.out}")
     return 0 if rate >= args.target else 1
 
 
@@ -228,6 +221,7 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("-c", "--config", default="gauge.yml")
     p.add_argument("--labels", required=True)
     p.add_argument("--target", type=float, default=0.9)
+    p.add_argument("--out", help="write a markdown report here")
     p.add_argument("--judge-mode", choices=["auto", "live", "replay"])
     p.set_defaults(fn=cmd_calibrate)
 
@@ -249,7 +243,7 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
     try:
         return args.fn(args)
-    except (DatasetError, ValueError, KeyError) as exc:
+    except (DatasetError, JudgeError, ValueError, KeyError) as exc:
         print(f"gauge: {exc}", file=sys.stderr)
         return 2
 

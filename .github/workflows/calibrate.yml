@@ -1,0 +1,35 @@
+name: Judge calibration
+
+# Manual. Needs the repository secret ANTHROPIC_API_KEY (Settings > Secrets and variables > Actions).
+# Runs the 20 labelled cases against the live judge and uploads the report and the recorded cassette.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  calibrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e .
+      - name: Run the calibration
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -z "$ANTHROPIC_API_KEY" ]; then echo "Add the ANTHROPIC_API_KEY repository secret first." >&2; exit 2; fi
+          bash scripts/calibrate.sh | tee calibration.log
+          cat examples/calibration/REPORT.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: judge-calibration
+          path: |
+            examples/calibration/REPORT.md
+            examples/calibration/judge.cassette.jsonl
+            calibration.log

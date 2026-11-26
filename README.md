@@ -94,8 +94,10 @@ Honest status, so you can weigh the claims:
 - **Real data:** results from the Docsift (40 documents) and Stacklight (53 questions) eval harnesses are imported into
   the hosted dashboard with `gauge import`. They are those projects' own numbers, not re-measured by Gauge.
 - **Judge calibration is not yet measured.** [`examples/calibration`](examples/calibration) holds 20 human-labelled
-  cases and the command to run them (needs an API key). Until that has been run and committed, treat judge scores as
-  unvalidated; the target is at least 90% agreement.
+  cases (10 faithful, 10 not). Run `ANTHROPIC_API_KEY=... bash scripts/calibrate.sh` (about 20 calls to
+  `claude-haiku-5-5`), or trigger the **Judge calibration** workflow after adding an `ANTHROPIC_API_KEY` repository
+  secret. It writes `examples/calibration/REPORT.md` and a cassette so the result can be re-checked offline. Until
+  that report is committed, treat judge scores as unvalidated; the target is at least 90% agreement.
 - **Out of scope for v0.1:** hosted SaaS, human annotation UI, distributed tracing, alerting, prompt versioning,
   support for every provider (Anthropic and OpenAI-compatible judges; Anthropic and OpenAI client wrappers).
 
