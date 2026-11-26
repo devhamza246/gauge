@@ -1,0 +1,100 @@
+{"id": "t001", "input": "I was charged twice for my invoice this month, please fix this ASAP", "expected": {"category": "billing", "priority": "high"}, "tags": ["billing"]}
+{"id": "t002", "input": "Where can I download last month's invoice?", "expected": {"category": "billing", "priority": "medium"}, "tags": ["billing"]}
+{"id": "t003", "input": "Question: can I pay by card instead of bank transfer?", "expected": {"category": "billing", "priority": "low"}, "tags": ["billing"]}
+{"id": "t004", "input": "My payment failed but the money left my card, I need a refund", "expected": {"category": "billing", "priority": "medium"}, "tags": ["billing"]}
+{"id": "t005", "input": "I'm wondering how the subscription price changes next year", "expected": {"category": "billing", "priority": "low"}, "tags": ["billing"]}
+{"id": "t006", "input": "The API returns a 500 error on every request, we are down", "expected": {"category": "technical", "priority": "high"}, "tags": ["technical"]}
+{"id": "t007", "input": "The dashboard is slow when I open the reports page", "expected": {"category": "technical", "priority": "medium"}, "tags": ["technical"]}
+{"id": "t008", "input": "Just checking: is there a rate limit on the API?", "expected": {"category": "technical", "priority": "low"}, "tags": ["technical"]}
+{"id": "t009", "input": "The export button is broken and nothing downloads", "expected": {"category": "technical", "priority": "medium"}, "tags": ["technical"]}
+{"id": "t010", "input": "The app crash happens on startup and we cannot work", "expected": {"category": "technical", "priority": "high"}, "tags": ["technical"]}
+{"id": "t011", "input": "I am locked out of my account and cannot log in", "expected": {"category": "account", "priority": "high"}, "tags": ["account"]}
+{"id": "t012", "input": "How do I change my email address on the profile?", "expected": {"category": "account", "priority": "low"}, "tags": ["account"]}
+{"id": "t013", "input": "I forgot my password and the reset link has expired", "expected": {"category": "account", "priority": "medium"}, "tags": ["account"]}
+{"id": "t014", "input": "Is it possible to enable two-factor login for my team?", "expected": {"category": "account", "priority": "low"}, "tags": ["account"]}
+{"id": "t015", "input": "My username shows the old company name", "expected": {"category": "account", "priority": "medium"}, "tags": ["account"]}
+{"id": "t016", "input": "My package has not arrived and the tracking has not updated in a week", "expected": {"category": "shipping", "priority": "medium"}, "tags": ["shipping"]}
+{"id": "t017", "input": "The courier marked it delivered but nothing came, urgent please", "expected": {"category": "shipping", "priority": "high"}, "tags": ["shipping"]}
+{"id": "t018", "input": "Curious when the next batch will be shipped", "expected": {"category": "shipping", "priority": "low"}, "tags": ["shipping"]}
+{"id": "t019", "input": "The delivery address label has a typo", "expected": {"category": "shipping", "priority": "medium"}, "tags": ["shipping"]}
+{"id": "t020", "input": "Tracking says my package arrived at the wrong city", "expected": {"category": "shipping", "priority": "medium"}, "tags": ["shipping"]}
+{"id": "t021", "input": "I was charged twice for my invoice this month, please fix this ASAP (customer on the Pro plan)", "expected": {"category": "billing", "priority": "high"}, "tags": ["billing"]}
+{"id": "t022", "input": "Where can I download last month's invoice? (customer on the Pro plan)", "expected": {"category": "billing", "priority": "medium"}, "tags": ["billing"]}
+{"id": "t023", "input": "Question: can I pay by card instead of bank transfer? (customer on the Pro plan)", "expected": {"category": "billing", "priority": "low"}, "tags": ["billing"]}
+{"id": "t024", "input": "My payment failed but the money left my card, I need a refund (customer on the Pro plan)", "expected": {"category": "billing", "priority": "medium"}, "tags": ["billing"]}
+{"id": "t025", "input": "I'm wondering how the subscription price changes next year (customer on the Pro plan)", "expected": {"category": "billing", "priority": "low"}, "tags": ["billing"]}
+{"id": "t026", "input": "The API returns a 500 error on every request, we are down (customer on the Pro plan)", "expected": {"category": "technical", "priority": "high"}, "tags": ["technical"]}
+{"id": "t027", "input": "The dashboard is slow when I open the reports page (customer on the Pro plan)", "expected": {"category": "technical", "priority": "medium"}, "tags": ["technical"]}
+{"id": "t028", "input": "Just checking: is there a rate limit on the API? (customer on the Pro plan)", "expected": {"category": "technical", "priority": "low"}, "tags": ["technical"]}
+{"id": "t029", "input": "The export button is broken and nothing downloads (customer on the Pro plan)", "expected": {"category": "technical", "priority": "medium"}, "tags": ["technical"]}
+{"id": "t030", "input": "The app crash happens on startup and we cannot work (customer on the Pro plan)", "expected": {"category": "technical", "priority": "high"}, "tags": ["technical"]}
+{"id": "t031", "input": "I am locked out of my account and cannot log in (customer on the Pro plan)", "expected": {"category": "account", "priority": "high"}, "tags": ["account"]}
+{"id": "t032", "input": "How do I change my email address on the profile? (customer on the Pro plan)", "expected": {"category": "account", "priority": "low"}, "tags": ["account"]}
+{"id": "t033", "input": "I forgot my password and the reset link has expired (customer on the Pro plan)", "expected": {"category": "account", "priority": "medium"}, "tags": ["account"]}
+{"id": "t034", "input": "Is it possible to enable two-factor login for my team? (customer on the Pro plan)", "expected": {"category": "account", "priority": "low"}, "tags": ["account"]}
+{"id": "t035", "input": "My username shows the old company name (customer on the Pro plan)", "expected": {"category": "account", "priority": "medium"}, "tags": ["account"]}
+{"id": "t036", "input": "My package has not arrived and the tracking has not updated in a week (customer on the Pro plan)", "expected": {"category": "shipping", "priority": "medium"}, "tags": ["shipping"]}
+{"id": "t037", "input": "The courier marked it delivered but nothing came, urgent please (customer on the Pro plan)", "expected": {"category": "shipping", "priority": "high"}, "tags": ["shipping"]}
+{"id": "t038", "input": "Curious when the next batch will be shipped (customer on the Pro plan)", "expected": {"category": "shipping", "priority": "low"}, "tags": ["shipping"]}
+{"id": "t039", "input": "The delivery address label has a typo (customer on the Pro plan)", "expected": {"category": "shipping", "priority": "medium"}, "tags": ["shipping"]}
+{"id": "t040", "input": "Tracking says my package arrived at the wrong city (customer on the Pro plan)", "expected": {"category": "shipping", "priority": "medium"}, "tags": ["shipping"]}
+{"id": "t041", "input": "I was charged twice for my invoice this month, please fix this ASAP", "expected": {"category": "billing", "priority": "high"}, "tags": ["billing"]}
+{"id": "t042", "input": "Where can I download last month's invoice?", "expected": {"category": "billing", "priority": "medium"}, "tags": ["billing"]}
+{"id": "t043", "input": "Question: can I pay by card instead of bank transfer?", "expected": {"category": "billing", "priority": "low"}, "tags": ["billing"]}
+{"id": "t044", "input": "My payment failed but the money left my card, I need a refund", "expected": {"category": "billing", "priority": "medium"}, "tags": ["billing"]}
+{"id": "t045", "input": "I'm wondering how the subscription price changes next year", "expected": {"category": "billing", "priority": "low"}, "tags": ["billing"]}
+{"id": "t046", "input": "The API returns a 500 error on every request, we are down", "expected": {"category": "technical", "priority": "high"}, "tags": ["technical"]}
+{"id": "t047", "input": "The dashboard is slow when I open the reports page", "expected": {"category": "technical", "priority": "medium"}, "tags": ["technical"]}
+{"id": "t048", "input": "Just checking: is there a rate limit on the API?", "expected": {"category": "technical", "priority": "low"}, "tags": ["technical"]}
+{"id": "t049", "input": "The export button is broken and nothing downloads", "expected": {"category": "technical", "priority": "medium"}, "tags": ["technical"]}
+{"id": "t050", "input": "The app crash happens on startup and we cannot work", "expected": {"category": "technical", "priority": "high"}, "tags": ["technical"]}
+{"id": "t051", "input": "I am locked out of my account and cannot log in", "expected": {"category": "account", "priority": "high"}, "tags": ["account"]}
+{"id": "t052", "input": "How do I change my email address on the profile?", "expected": {"category": "account", "priority": "low"}, "tags": ["account"]}
+{"id": "t053", "input": "I forgot my password and the reset link has expired", "expected": {"category": "account", "priority": "medium"}, "tags": ["account"]}
+{"id": "t054", "input": "Is it possible to enable two-factor login for my team?", "expected": {"category": "account", "priority": "low"}, "tags": ["account"]}
+{"id": "t055", "input": "My username shows the old company name", "expected": {"category": "account", "priority": "medium"}, "tags": ["account"]}
+{"id": "t056", "input": "My package has not arrived and the tracking has not updated in a week", "expected": {"category": "shipping", "priority": "medium"}, "tags": ["shipping"]}
+{"id": "t057", "input": "The courier marked it delivered but nothing came, urgent please", "expected": {"category": "shipping", "priority": "high"}, "tags": ["shipping"]}
+{"id": "t058", "input": "Curious when the next batch will be shipped", "expected": {"category": "shipping", "priority": "low"}, "tags": ["shipping"]}
+{"id": "t059", "input": "The delivery address label has a typo", "expected": {"category": "shipping", "priority": "medium"}, "tags": ["shipping"]}
+{"id": "t060", "input": "Tracking says my package arrived at the wrong city", "expected": {"category": "shipping", "priority": "medium"}, "tags": ["shipping"]}
+{"id": "t061", "input": "I was charged twice for my invoice this month, please fix this ASAP (customer on the Pro plan)", "expected": {"category": "billing", "priority": "high"}, "tags": ["billing"]}
+{"id": "t062", "input": "Where can I download last month's invoice? (customer on the Pro plan)", "expected": {"category": "billing", "priority": "medium"}, "tags": ["billing"]}
+{"id": "t063", "input": "Question: can I pay by card instead of bank transfer? (customer on the Pro plan)", "expected": {"category": "billing", "priority": "low"}, "tags": ["billing"]}
+{"id": "t064", "input": "My payment failed but the money left my card, I need a refund (customer on the Pro plan)", "expected": {"category": "billing", "priority": "medium"}, "tags": ["billing"]}
+{"id": "t065", "input": "I'm wondering how the subscription price changes next year (customer on the Pro plan)", "expected": {"category": "billing", "priority": "low"}, "tags": ["billing"]}
+{"id": "t066", "input": "The API returns a 500 error on every request, we are down (customer on the Pro plan)", "expected": {"category": "technical", "priority": "high"}, "tags": ["technical"]}
+{"id": "t067", "input": "The dashboard is slow when I open the reports page (customer on the Pro plan)", "expected": {"category": "technical", "priority": "medium"}, "tags": ["technical"]}
+{"id": "t068", "input": "Just checking: is there a rate limit on the API? (customer on the Pro plan)", "expected": {"category": "technical", "priority": "low"}, "tags": ["technical"]}
+{"id": "t069", "input": "The export button is broken and nothing downloads (customer on the Pro plan)", "expected": {"category": "technical", "priority": "medium"}, "tags": ["technical"]}
+{"id": "t070", "input": "The app crash happens on startup and we cannot work (customer on the Pro plan)", "expected": {"category": "technical", "priority": "high"}, "tags": ["technical"]}
+{"id": "t071", "input": "I am locked out of my account and cannot log in (customer on the Pro plan)", "expected": {"category": "account", "priority": "high"}, "tags": ["account"]}
+{"id": "t072", "input": "How do I change my email address on the profile? (customer on the Pro plan)", "expected": {"category": "account", "priority": "low"}, "tags": ["account"]}
+{"id": "t073", "input": "I forgot my password and the reset link has expired (customer on the Pro plan)", "expected": {"category": "account", "priority": "medium"}, "tags": ["account"]}
+{"id": "t074", "input": "Is it possible to enable two-factor login for my team? (customer on the Pro plan)", "expected": {"category": "account", "priority": "low"}, "tags": ["account"]}
+{"id": "t075", "input": "My username shows the old company name (customer on the Pro plan)", "expected": {"category": "account", "priority": "medium"}, "tags": ["account"]}
+{"id": "t076", "input": "My package has not arrived and the tracking has not updated in a week (customer on the Pro plan)", "expected": {"category": "shipping", "priority": "medium"}, "tags": ["shipping"]}
+{"id": "t077", "input": "The courier marked it delivered but nothing came, urgent please (customer on the Pro plan)", "expected": {"category": "shipping", "priority": "high"}, "tags": ["shipping"]}
+{"id": "t078", "input": "Curious when the next batch will be shipped (customer on the Pro plan)", "expected": {"category": "shipping", "priority": "low"}, "tags": ["shipping"]}
+{"id": "t079", "input": "The delivery address label has a typo (customer on the Pro plan)", "expected": {"category": "shipping", "priority": "medium"}, "tags": ["shipping"]}
+{"id": "t080", "input": "Tracking says my package arrived at the wrong city (customer on the Pro plan)", "expected": {"category": "shipping", "priority": "medium"}, "tags": ["shipping"]}
+{"id": "t081", "input": "I was charged twice for my invoice this month, please fix this ASAP", "expected": {"category": "billing", "priority": "high"}, "tags": ["billing"]}
+{"id": "t082", "input": "Where can I download last month's invoice?", "expected": {"category": "billing", "priority": "medium"}, "tags": ["billing"]}
+{"id": "t083", "input": "Question: can I pay by card instead of bank transfer?", "expected": {"category": "billing", "priority": "low"}, "tags": ["billing"]}
+{"id": "t084", "input": "My payment failed but the money left my card, I need a refund", "expected": {"category": "billing", "priority": "medium"}, "tags": ["billing"]}
+{"id": "t085", "input": "I'm wondering how the subscription price changes next year", "expected": {"category": "billing", "priority": "low"}, "tags": ["billing"]}
+{"id": "t086", "input": "The API returns a 500 error on every request, we are down", "expected": {"category": "technical", "priority": "high"}, "tags": ["technical"]}
+{"id": "t087", "input": "The dashboard is slow when I open the reports page", "expected": {"category": "technical", "priority": "medium"}, "tags": ["technical"]}
+{"id": "t088", "input": "Just checking: is there a rate limit on the API?", "expected": {"category": "technical", "priority": "low"}, "tags": ["technical"]}
+{"id": "t089", "input": "The export button is broken and nothing downloads", "expected": {"category": "technical", "priority": "medium"}, "tags": ["technical"]}
+{"id": "t090", "input": "The app crash happens on startup and we cannot work", "expected": {"category": "technical", "priority": "high"}, "tags": ["technical"]}
+{"id": "t091", "input": "I am locked out of my account and cannot log in", "expected": {"category": "account", "priority": "high"}, "tags": ["account"]}
+{"id": "t092", "input": "How do I change my email address on the profile?", "expected": {"category": "account", "priority": "low"}, "tags": ["account"]}
+{"id": "t093", "input": "I forgot my password and the reset link has expired", "expected": {"category": "account", "priority": "medium"}, "tags": ["account"]}
+{"id": "t094", "input": "Is it possible to enable two-factor login for my team?", "expected": {"category": "account", "priority": "low"}, "tags": ["account"]}
+{"id": "t095", "input": "My username shows the old company name", "expected": {"category": "account", "priority": "medium"}, "tags": ["account"]}
+{"id": "t096", "input": "My package has not arrived and the tracking has not updated in a week", "expected": {"category": "shipping", "priority": "medium"}, "tags": ["shipping"]}
+{"id": "t097", "input": "The courier marked it delivered but nothing came, urgent please", "expected": {"category": "shipping", "priority": "high"}, "tags": ["shipping"]}
+{"id": "t098", "input": "Curious when the next batch will be shipped", "expected": {"category": "shipping", "priority": "low"}, "tags": ["shipping"]}
+{"id": "t099", "input": "The delivery address label has a typo", "expected": {"category": "shipping", "priority": "medium"}, "tags": ["shipping"]}
+{"id": "t100", "input": "Tracking says my package arrived at the wrong city", "expected": {"category": "shipping", "priority": "medium"}, "tags": ["shipping"]}
