@@ -6,10 +6,13 @@ Gauge is a small Python library, CLI and self-hostable dashboard. You describe y
 your app, and it runs the cases in parallel, traces every LLM call (prompt, output, tokens, latency, cost), scores the
 results, stores them per commit and fails the pull request when quality, cost or latency regress against `main`.
 
+**Live:** [dashboard](https://gauge.hamzacodes.dev) (Docsift and Stacklight results, plus the example app's
+passing `main` run and a failing PR run) · [the failing demo PR](https://github.com/devhamza246/gauge/pull/1)
+
 ## Quickstart
 
 ```bash
-pip install gauge-eval            # or: pip install git+https://github.com/devhamza246/gauge
+pip install git+https://github.com/devhamza246/gauge   # not on PyPI yet
 cat > gauge.yml <<'EOF'
 name: my-bot
 dataset: cases.jsonl              # {"id": "1", "input": "...", "expected": "..."} per line
