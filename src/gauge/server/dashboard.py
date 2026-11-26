@@ -51,8 +51,8 @@ c2.metric("Cases", f"{int(latest['passed'])}/{int(latest['total'])}")
 c3.metric("Cost / run", f"${latest['cost ($)']:.4f}", None if prev is None else f"{latest['cost ($)'] - prev['cost ($)']:+.4f}", delta_color="inverse")
 c4.metric("Latency p95", f"{latest['p95 (ms)']:.0f} ms", None if prev is None else f"{latest['p95 (ms)'] - prev['p95 (ms)']:+.0f} ms", delta_color="inverse")
 
-df["label"] = df["commit"] + " " + df["when"].dt.strftime("%m-%d %H:%M")
-chart_df = df.set_index("label")
+
+chart_df = df.set_index("when")
 left, mid, right = st.columns(3)
 left.subheader("Pass rate per commit")
 left.line_chart(chart_df["pass rate"])
