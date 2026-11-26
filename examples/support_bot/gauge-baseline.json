@@ -1,10 +1,10 @@
 {
   "suite": "support-bot",
-  "commit": null,
-  "branch": null,
+  "commit": "b58543e5a038e1133d32c62948e8ddaf5fe1651f",
+  "branch": "main",
   "pr": null,
-  "message": null,
-  "started_at": "2026-11-26T13:39:09.114574+00:00",
+  "message": "feat: importers for Docsift and Stacklight eval results",
+  "started_at": "2026-11-26T13:49:39.603411+00:00",
   "source": "gauge",
   "summary": {
     "total": 100,
@@ -16,9 +16,9 @@
     "judge_cost_usd": 0.0,
     "input_tokens": 9708,
     "output_tokens": 1060,
-    "latency_p50_ms": 17.345711999951163,
-    "latency_p95_ms": 21.91510400007246,
-    "duration_s": 0.23526848999972572
+    "latency_p50_ms": 19.455773999652592,
+    "latency_p95_ms": 29.54822300307569,
+    "duration_s": 0.290254356998048
   },
   "thresholds": {
     "max_pass_rate_drop": 0.02,
@@ -63,17 +63,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "I was charged twice for my invoice this month, please fix this ASAP",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nI was charged twice for my invoice this month, please fix this ASAP",
           "output": "{\"category\": \"billing\", \"priority\": \"high\"}",
           "input_tokens": 98,
           "output_tokens": 10,
-          "latency_ms": 17.298047001531813,
+          "latency_ms": 17.15922400035197,
           "cost_usd": 0.0000148,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 17.345711999951163,
+      "latency_ms": 17.222459999175044,
       "cost_usd": 0.0000148,
       "input_tokens": 98,
       "output_tokens": 10,
@@ -114,17 +114,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "Where can I download last month's invoice?",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nWhere can I download last month's invoice?",
           "output": "{\"category\": \"billing\", \"priority\": \"high\"}",
           "input_tokens": 92,
           "output_tokens": 10,
-          "latency_ms": 18.362726998020662,
+          "latency_ms": 19.84503000130644,
           "cost_usd": 0.000014200000000000001,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 18.421342996589374,
+      "latency_ms": 19.89559499997995,
       "cost_usd": 0.000014200000000000001,
       "input_tokens": 92,
       "output_tokens": 10,
@@ -165,17 +165,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "Question: can I pay by card instead of bank transfer?",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nQuestion: can I pay by card instead of bank transfer?",
           "output": "{\"category\": \"billing\", \"priority\": \"low\"}",
           "input_tokens": 95,
           "output_tokens": 10,
-          "latency_ms": 21.454761001223233,
+          "latency_ms": 23.980964000656968,
           "cost_usd": 0.0000145,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 21.50480099953711,
+      "latency_ms": 24.03288700224948,
       "cost_usd": 0.0000145,
       "input_tokens": 95,
       "output_tokens": 10,
@@ -216,17 +216,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "My payment failed but the money left my card, I need a refund",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nMy payment failed but the money left my card, I need a refund",
           "output": "{\"category\": \"billing\", \"priority\": \"medium\"}",
           "input_tokens": 97,
           "output_tokens": 11,
-          "latency_ms": 12.10562100095558,
+          "latency_ms": 13.717129000724526,
           "cost_usd": 0.000015200000000000002,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 12.142242001573322,
+      "latency_ms": 13.768572000117274,
       "cost_usd": 0.000015200000000000002,
       "input_tokens": 97,
       "output_tokens": 11,
@@ -267,17 +267,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "I'm wondering how the subscription price changes next year",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nI'm wondering how the subscription price changes next year",
           "output": "{\"category\": \"billing\", \"priority\": \"low\"}",
           "input_tokens": 96,
           "output_tokens": 10,
-          "latency_ms": 8.15094300196506,
+          "latency_ms": 8.218287002819125,
           "cost_usd": 0.0000146,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 8.200111999030923,
+      "latency_ms": 8.292151000205195,
       "cost_usd": 0.0000146,
       "input_tokens": 96,
       "output_tokens": 10,
@@ -318,17 +318,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "The API returns a 500 error on every request, we are down",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nThe API returns a 500 error on every request, we are down",
           "output": "{\"category\": \"technical\", \"priority\": \"high\"}",
           "input_tokens": 96,
           "output_tokens": 11,
-          "latency_ms": 10.110079998412402,
+          "latency_ms": 10.151572001632303,
           "cost_usd": 0.000015100000000000001,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 10.152937997190747,
+      "latency_ms": 10.20386399977724,
       "cost_usd": 0.000015100000000000001,
       "input_tokens": 96,
       "output_tokens": 11,
@@ -369,17 +369,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "The dashboard is slow when I open the reports page",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nThe dashboard is slow when I open the reports page",
           "output": "{\"category\": \"technical\", \"priority\": \"medium\"}",
           "input_tokens": 94,
           "output_tokens": 11,
-          "latency_ms": 21.881139000470284,
+          "latency_ms": 24.705432002519956,
           "cost_usd": 0.0000149,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 21.91510400007246,
+      "latency_ms": 24.764071000390686,
       "cost_usd": 0.0000149,
       "input_tokens": 94,
       "output_tokens": 11,
@@ -420,17 +420,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "Just checking: is there a rate limit on the API?",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nJust checking: is there a rate limit on the API?",
           "output": "{\"category\": \"technical\", \"priority\": \"low\"}",
           "input_tokens": 93,
           "output_tokens": 11,
-          "latency_ms": 18.647327000508085,
+          "latency_ms": 20.122730998991756,
           "cost_usd": 0.0000148,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 18.690201002755202,
+      "latency_ms": 20.17003600121825,
       "cost_usd": 0.0000148,
       "input_tokens": 93,
       "output_tokens": 11,
@@ -471,17 +471,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "The export button is broken and nothing downloads",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nThe export button is broken and nothing downloads",
           "output": "{\"category\": \"technical\", \"priority\": \"high\"}",
           "input_tokens": 94,
           "output_tokens": 11,
-          "latency_ms": 18.302204000065103,
+          "latency_ms": 20.679526001913473,
           "cost_usd": 0.0000149,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 18.36220599943772,
+      "latency_ms": 20.723454999824753,
       "cost_usd": 0.0000149,
       "input_tokens": 94,
       "output_tokens": 11,
@@ -522,17 +522,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "The app crash happens on startup and we cannot work",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nThe app crash happens on startup and we cannot work",
           "output": "{\"category\": \"technical\", \"priority\": \"high\"}",
           "input_tokens": 94,
           "output_tokens": 11,
-          "latency_ms": 12.283391999517335,
+          "latency_ms": 14.841623000393156,
           "cost_usd": 0.0000149,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 12.314132996834815,
+      "latency_ms": 14.886205000948394,
       "cost_usd": 0.0000149,
       "input_tokens": 94,
       "output_tokens": 11,
@@ -573,17 +573,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "I am locked out of my account and cannot log in",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nI am locked out of my account and cannot log in",
           "output": "{\"category\": \"account\", \"priority\": \"high\"}",
           "input_tokens": 93,
           "output_tokens": 10,
-          "latency_ms": 18.746933001239086,
+          "latency_ms": 19.24802099892986,
           "cost_usd": 0.0000143,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 18.77436100039631,
+      "latency_ms": 19.296217000373872,
       "cost_usd": 0.0000143,
       "input_tokens": 93,
       "output_tokens": 10,
@@ -624,17 +624,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "How do I change my email address on the profile?",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nHow do I change my email address on the profile?",
           "output": "{\"category\": \"account\", \"priority\": \"low\"}",
           "input_tokens": 93,
           "output_tokens": 10,
-          "latency_ms": 13.190068999392679,
+          "latency_ms": 14.392771001439542,
           "cost_usd": 0.0000143,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 13.22436600094079,
+      "latency_ms": 14.432104999286821,
       "cost_usd": 0.0000143,
       "input_tokens": 93,
       "output_tokens": 10,
@@ -675,17 +675,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "I forgot my password and the reset link has expired",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nI forgot my password and the reset link has expired",
           "output": "{\"category\": \"account\", \"priority\": \"medium\"}",
           "input_tokens": 94,
           "output_tokens": 11,
-          "latency_ms": 17.154846998892026,
+          "latency_ms": 17.135049998614704,
           "cost_usd": 0.0000149,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 17.209206002007704,
+      "latency_ms": 17.17966399883153,
       "cost_usd": 0.0000149,
       "input_tokens": 94,
       "output_tokens": 11,
@@ -726,17 +726,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "Is it possible to enable two-factor login for my team?",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nIs it possible to enable two-factor login for my team?",
           "output": "{\"category\": \"account\", \"priority\": \"low\"}",
           "input_tokens": 95,
           "output_tokens": 10,
-          "latency_ms": 17.338042001938447,
+          "latency_ms": 18.063982999592554,
           "cost_usd": 0.0000145,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 17.38895800008322,
+      "latency_ms": 18.117809999239398,
       "cost_usd": 0.0000145,
       "input_tokens": 95,
       "output_tokens": 10,
@@ -777,17 +777,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "My username shows the old company name",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nMy username shows the old company name",
           "output": "{\"category\": \"account\", \"priority\": \"medium\"}",
           "input_tokens": 91,
           "output_tokens": 11,
-          "latency_ms": 20.475154000450857,
+          "latency_ms": 21.440644999529468,
           "cost_usd": 0.000014599999999999999,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 20.50845000121626,
+      "latency_ms": 21.487368001544382,
       "cost_usd": 0.000014599999999999999,
       "input_tokens": 91,
       "output_tokens": 11,
@@ -828,17 +828,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "My package has not arrived and the tracking has not updated in a week",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nMy package has not arrived and the tracking has not updated in a week",
           "output": "{\"category\": \"shipping\", \"priority\": \"medium\"}",
           "input_tokens": 99,
           "output_tokens": 11,
-          "latency_ms": 20.759684000950074,
+          "latency_ms": 24.93442699778825,
           "cost_usd": 0.0000154,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 20.82186199913849,
+      "latency_ms": 24.984910000057425,
       "cost_usd": 0.0000154,
       "input_tokens": 99,
       "output_tokens": 11,
@@ -879,17 +879,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "The courier marked it delivered but nothing came, urgent please",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nThe courier marked it delivered but nothing came, urgent please",
           "output": "{\"category\": \"shipping\", \"priority\": \"high\"}",
           "input_tokens": 97,
           "output_tokens": 11,
-          "latency_ms": 16.106401999422815,
+          "latency_ms": 19.54907099934644,
           "cost_usd": 0.000015200000000000002,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 16.133574001287343,
+      "latency_ms": 19.597938997321762,
       "cost_usd": 0.000015200000000000002,
       "input_tokens": 97,
       "output_tokens": 11,
@@ -930,17 +930,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "Curious when the next batch will be shipped",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nCurious when the next batch will be shipped",
           "output": "{\"category\": \"shipping\", \"priority\": \"low\"}",
           "input_tokens": 92,
           "output_tokens": 10,
-          "latency_ms": 15.866206002101535,
+          "latency_ms": 31.001928000478074,
           "cost_usd": 0.000014200000000000001,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 15.898540001217043,
+      "latency_ms": 31.060424000315834,
       "cost_usd": 0.000014200000000000001,
       "input_tokens": 92,
       "output_tokens": 10,
@@ -981,17 +981,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "The delivery address label has a typo",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nThe delivery address label has a typo",
           "output": "{\"category\": \"shipping\", \"priority\": \"medium\"}",
           "input_tokens": 91,
           "output_tokens": 11,
-          "latency_ms": 8.171220000804169,
+          "latency_ms": 9.44325300224591,
           "cost_usd": 0.000014599999999999999,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 8.200157000828767,
+      "latency_ms": 9.482469002250582,
       "cost_usd": 0.000014599999999999999,
       "input_tokens": 91,
       "output_tokens": 11,
@@ -1032,17 +1032,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "Tracking says my package arrived at the wrong city",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nTracking says my package arrived at the wrong city",
           "output": "{\"category\": \"shipping\", \"priority\": \"medium\"}",
           "input_tokens": 94,
           "output_tokens": 11,
-          "latency_ms": 14.423685002839193,
+          "latency_ms": 29.51206999932765,
           "cost_usd": 0.0000149,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 14.473270002781646,
+      "latency_ms": 29.54822300307569,
       "cost_usd": 0.0000149,
       "input_tokens": 94,
       "output_tokens": 11,
@@ -1083,17 +1083,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "I was charged twice for my invoice this month, please fix this ASAP (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nI was charged twice for my invoice this month, please fix this ASAP (customer on the Pro plan)",
           "output": "{\"category\": \"billing\", \"priority\": \"high\"}",
           "input_tokens": 105,
           "output_tokens": 10,
-          "latency_ms": 13.068304000626085,
+          "latency_ms": 30.567408000933938,
           "cost_usd": 0.0000155,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 13.099699001031695,
+      "latency_ms": 30.641711000498617,
       "cost_usd": 0.0000155,
       "input_tokens": 105,
       "output_tokens": 10,
@@ -1134,17 +1134,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "Where can I download last month's invoice? (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nWhere can I download last month's invoice? (customer on the Pro plan)",
           "output": "{\"category\": \"billing\", \"priority\": \"high\"}",
           "input_tokens": 99,
           "output_tokens": 10,
-          "latency_ms": 9.967713998776162,
+          "latency_ms": 12.945023001520894,
           "cost_usd": 0.0000149,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 9.994230000302196,
+      "latency_ms": 13.01044000138063,
       "cost_usd": 0.0000149,
       "input_tokens": 99,
       "output_tokens": 10,
@@ -1185,17 +1185,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "Question: can I pay by card instead of bank transfer? (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nQuestion: can I pay by card instead of bank transfer? (customer on the Pro plan)",
           "output": "{\"category\": \"billing\", \"priority\": \"low\"}",
           "input_tokens": 101,
           "output_tokens": 10,
-          "latency_ms": 11.452621001808438,
+          "latency_ms": 13.597701999970013,
           "cost_usd": 0.000015100000000000001,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 11.483722999400925,
+      "latency_ms": 13.643865000631195,
       "cost_usd": 0.000015100000000000001,
       "input_tokens": 101,
       "output_tokens": 10,
@@ -1236,17 +1236,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "My payment failed but the money left my card, I need a refund (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nMy payment failed but the money left my card, I need a refund (customer on the Pro plan)",
           "output": "{\"category\": \"billing\", \"priority\": \"medium\"}",
           "input_tokens": 103,
           "output_tokens": 11,
-          "latency_ms": 20.773678999830736,
+          "latency_ms": 24.51420100260293,
           "cost_usd": 0.0000158,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 20.839099001022987,
+      "latency_ms": 24.565990999690257,
       "cost_usd": 0.0000158,
       "input_tokens": 103,
       "output_tokens": 11,
@@ -1287,17 +1287,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "I'm wondering how the subscription price changes next year (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nI'm wondering how the subscription price changes next year (customer on the Pro plan)",
           "output": "{\"category\": \"billing\", \"priority\": \"low\"}",
           "input_tokens": 103,
           "output_tokens": 10,
-          "latency_ms": 9.820514998864383,
+          "latency_ms": 16.752039999119006,
           "cost_usd": 0.0000153,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 9.86328399812919,
+      "latency_ms": 16.80361600301694,
       "cost_usd": 0.0000153,
       "input_tokens": 103,
       "output_tokens": 10,
@@ -1338,17 +1338,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "The API returns a 500 error on every request, we are down (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nThe API returns a 500 error on every request, we are down (customer on the Pro plan)",
           "output": "{\"category\": \"technical\", \"priority\": \"high\"}",
           "input_tokens": 102,
           "output_tokens": 11,
-          "latency_ms": 20.351082002889598,
+          "latency_ms": 28.582704999280395,
           "cost_usd": 0.000015700000000000002,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 20.409425000252668,
+      "latency_ms": 28.631362998567056,
       "cost_usd": 0.000015700000000000002,
       "input_tokens": 102,
       "output_tokens": 11,
@@ -1389,17 +1389,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "The dashboard is slow when I open the reports page (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nThe dashboard is slow when I open the reports page (customer on the Pro plan)",
           "output": "{\"category\": \"technical\", \"priority\": \"medium\"}",
           "input_tokens": 101,
           "output_tokens": 11,
-          "latency_ms": 22.277382002357626,
+          "latency_ms": 22.27022599981865,
           "cost_usd": 0.000015600000000000003,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 22.324827001284575,
+      "latency_ms": 22.316768001473974,
       "cost_usd": 0.000015600000000000003,
       "input_tokens": 101,
       "output_tokens": 11,
@@ -1440,17 +1440,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "Just checking: is there a rate limit on the API? (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nJust checking: is there a rate limit on the API? (customer on the Pro plan)",
           "output": "{\"category\": \"technical\", \"priority\": \"low\"}",
           "input_tokens": 100,
           "output_tokens": 11,
-          "latency_ms": 10.191651999775786,
+          "latency_ms": 13.315616997715551,
           "cost_usd": 0.0000155,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 10.239371000352548,
+      "latency_ms": 13.365259997954126,
       "cost_usd": 0.0000155,
       "input_tokens": 100,
       "output_tokens": 11,
@@ -1491,17 +1491,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "The export button is broken and nothing downloads (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nThe export button is broken and nothing downloads (customer on the Pro plan)",
           "output": "{\"category\": \"technical\", \"priority\": \"high\"}",
           "input_tokens": 100,
           "output_tokens": 11,
-          "latency_ms": 26.840940001420677,
+          "latency_ms": 20.400388002599357,
           "cost_usd": 0.0000155,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 26.882119000219973,
+      "latency_ms": 20.445999998628395,
       "cost_usd": 0.0000155,
       "input_tokens": 100,
       "output_tokens": 11,
@@ -1542,17 +1542,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "The app crash happens on startup and we cannot work (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nThe app crash happens on startup and we cannot work (customer on the Pro plan)",
           "output": "{\"category\": \"technical\", \"priority\": \"high\"}",
           "input_tokens": 101,
           "output_tokens": 11,
-          "latency_ms": 8.984815998701379,
+          "latency_ms": 10.729771001933841,
           "cost_usd": 0.000015600000000000003,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 9.036272000230383,
+      "latency_ms": 10.779743999592029,
       "cost_usd": 0.000015600000000000003,
       "input_tokens": 101,
       "output_tokens": 11,
@@ -1593,17 +1593,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "I am locked out of my account and cannot log in (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nI am locked out of my account and cannot log in (customer on the Pro plan)",
           "output": "{\"category\": \"account\", \"priority\": \"high\"}",
           "input_tokens": 100,
           "output_tokens": 10,
-          "latency_ms": 18.34454699928756,
+          "latency_ms": 19.024946999707026,
           "cost_usd": 0.000015,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 18.41196199893602,
+      "latency_ms": 19.07538199884584,
       "cost_usd": 0.000015,
       "input_tokens": 100,
       "output_tokens": 10,
@@ -1644,17 +1644,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "How do I change my email address on the profile? (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nHow do I change my email address on the profile? (customer on the Pro plan)",
           "output": "{\"category\": \"account\", \"priority\": \"low\"}",
           "input_tokens": 100,
           "output_tokens": 10,
-          "latency_ms": 18.537572999775875,
+          "latency_ms": 19.40431500042905,
           "cost_usd": 0.000015,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 18.608259000757243,
+      "latency_ms": 19.455773999652592,
       "cost_usd": 0.000015,
       "input_tokens": 100,
       "output_tokens": 10,
@@ -1695,17 +1695,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "I forgot my password and the reset link has expired (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nI forgot my password and the reset link has expired (customer on the Pro plan)",
           "output": "{\"category\": \"account\", \"priority\": \"medium\"}",
           "input_tokens": 101,
           "output_tokens": 11,
-          "latency_ms": 18.00445899789338,
+          "latency_ms": 19.75625900013256,
           "cost_usd": 0.000015600000000000003,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 18.04582600016147,
+      "latency_ms": 19.803443999990122,
       "cost_usd": 0.000015600000000000003,
       "input_tokens": 101,
       "output_tokens": 11,
@@ -1746,17 +1746,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "Is it possible to enable two-factor login for my team? (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nIs it possible to enable two-factor login for my team? (customer on the Pro plan)",
           "output": "{\"category\": \"account\", \"priority\": \"low\"}",
           "input_tokens": 102,
           "output_tokens": 10,
-          "latency_ms": 18.462940999597777,
+          "latency_ms": 22.14448800077662,
           "cost_usd": 0.000015200000000000002,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 18.527738000557292,
+      "latency_ms": 22.193133998371195,
       "cost_usd": 0.000015200000000000002,
       "input_tokens": 102,
       "output_tokens": 10,
@@ -1797,17 +1797,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "My username shows the old company name (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nMy username shows the old company name (customer on the Pro plan)",
           "output": "{\"category\": \"account\", \"priority\": \"medium\"}",
           "input_tokens": 98,
           "output_tokens": 11,
-          "latency_ms": 19.707391002157237,
+          "latency_ms": 22.25912799985963,
           "cost_usd": 0.0000153,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 19.7418360003212,
+      "latency_ms": 22.304915000859182,
       "cost_usd": 0.0000153,
       "input_tokens": 98,
       "output_tokens": 11,
@@ -1848,17 +1848,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "My package has not arrived and the tracking has not updated in a week (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nMy package has not arrived and the tracking has not updated in a week (customer on the Pro plan)",
           "output": "{\"category\": \"shipping\", \"priority\": \"medium\"}",
           "input_tokens": 105,
           "output_tokens": 11,
-          "latency_ms": 14.746556000318378,
+          "latency_ms": 13.906619002227671,
           "cost_usd": 0.000016,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 14.81799800239969,
+      "latency_ms": 13.95203599895467,
       "cost_usd": 0.000016,
       "input_tokens": 105,
       "output_tokens": 11,
@@ -1899,17 +1899,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "The courier marked it delivered but nothing came, urgent please (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nThe courier marked it delivered but nothing came, urgent please (customer on the Pro plan)",
           "output": "{\"category\": \"shipping\", \"priority\": \"high\"}",
           "input_tokens": 104,
           "output_tokens": 11,
-          "latency_ms": 14.955383001506561,
+          "latency_ms": 20.733269997435855,
           "cost_usd": 0.0000159,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 15.00588099952438,
+      "latency_ms": 20.77990699763177,
       "cost_usd": 0.0000159,
       "input_tokens": 104,
       "output_tokens": 11,
@@ -1950,17 +1950,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "Curious when the next batch will be shipped (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nCurious when the next batch will be shipped (customer on the Pro plan)",
           "output": "{\"category\": \"shipping\", \"priority\": \"low\"}",
           "input_tokens": 99,
           "output_tokens": 10,
-          "latency_ms": 16.996304999338463,
+          "latency_ms": 24.30794600149966,
           "cost_usd": 0.0000149,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 17.03859199915314,
+      "latency_ms": 24.372289000893943,
       "cost_usd": 0.0000149,
       "input_tokens": 99,
       "output_tokens": 10,
@@ -2001,17 +2001,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "The delivery address label has a typo (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nThe delivery address label has a typo (customer on the Pro plan)",
           "output": "{\"category\": \"shipping\", \"priority\": \"medium\"}",
           "input_tokens": 97,
           "output_tokens": 11,
-          "latency_ms": 12.28012600040529,
+          "latency_ms": 18.318717000511242,
           "cost_usd": 0.000015200000000000002,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 12.316868000198156,
+      "latency_ms": 18.36846199876163,
       "cost_usd": 0.000015200000000000002,
       "input_tokens": 97,
       "output_tokens": 11,
@@ -2052,17 +2052,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "Tracking says my package arrived at the wrong city (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nTracking says my package arrived at the wrong city (customer on the Pro plan)",
           "output": "{\"category\": \"shipping\", \"priority\": \"medium\"}",
           "input_tokens": 101,
           "output_tokens": 11,
-          "latency_ms": 18.173600001318846,
+          "latency_ms": 21.502003000932746,
           "cost_usd": 0.000015600000000000003,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 18.21053700041375,
+      "latency_ms": 21.547798001847696,
       "cost_usd": 0.000015600000000000003,
       "input_tokens": 101,
       "output_tokens": 11,
@@ -2103,17 +2103,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "I was charged twice for my invoice this month, please fix this ASAP",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nI was charged twice for my invoice this month, please fix this ASAP",
           "output": "{\"category\": \"billing\", \"priority\": \"high\"}",
           "input_tokens": 98,
           "output_tokens": 10,
-          "latency_ms": 19.78939200125751,
+          "latency_ms": 34.52534099778859,
           "cost_usd": 0.0000148,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 19.8261339974124,
+      "latency_ms": 34.58719699847279,
       "cost_usd": 0.0000148,
       "input_tokens": 98,
       "output_tokens": 10,
@@ -2154,17 +2154,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "Where can I download last month's invoice?",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nWhere can I download last month's invoice?",
           "output": "{\"category\": \"billing\", \"priority\": \"high\"}",
           "input_tokens": 92,
           "output_tokens": 10,
-          "latency_ms": 20.490454000537284,
+          "latency_ms": 22.072354000556516,
           "cost_usd": 0.000014200000000000001,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 20.521968999673845,
+      "latency_ms": 22.130558998469496,
       "cost_usd": 0.000014200000000000001,
       "input_tokens": 92,
       "output_tokens": 10,
@@ -2205,17 +2205,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "Question: can I pay by card instead of bank transfer?",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nQuestion: can I pay by card instead of bank transfer?",
           "output": "{\"category\": \"billing\", \"priority\": \"low\"}",
           "input_tokens": 95,
           "output_tokens": 10,
-          "latency_ms": 20.211346996802604,
+          "latency_ms": 22.96272799867438,
           "cost_usd": 0.0000145,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 20.24493600038113,
+      "latency_ms": 23.01771600104985,
       "cost_usd": 0.0000145,
       "input_tokens": 95,
       "output_tokens": 10,
@@ -2256,17 +2256,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "My payment failed but the money left my card, I need a refund",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nMy payment failed but the money left my card, I need a refund",
           "output": "{\"category\": \"billing\", \"priority\": \"medium\"}",
           "input_tokens": 97,
           "output_tokens": 11,
-          "latency_ms": 15.997539001546102,
+          "latency_ms": 12.143735999416094,
           "cost_usd": 0.000015200000000000002,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 16.02998700036551,
+      "latency_ms": 12.194741000712384,
       "cost_usd": 0.000015200000000000002,
       "input_tokens": 97,
       "output_tokens": 11,
@@ -2307,17 +2307,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "I'm wondering how the subscription price changes next year",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nI'm wondering how the subscription price changes next year",
           "output": "{\"category\": \"billing\", \"priority\": \"low\"}",
           "input_tokens": 96,
           "output_tokens": 10,
-          "latency_ms": 9.131793998676585,
+          "latency_ms": 18.399401000351645,
           "cost_usd": 0.0000146,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 9.170143999654101,
+      "latency_ms": 18.448287999490276,
       "cost_usd": 0.0000146,
       "input_tokens": 96,
       "output_tokens": 10,
@@ -2358,17 +2358,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "The API returns a 500 error on every request, we are down",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nThe API returns a 500 error on every request, we are down",
           "output": "{\"category\": \"technical\", \"priority\": \"high\"}",
           "input_tokens": 96,
           "output_tokens": 11,
-          "latency_ms": 15.37603799806675,
+          "latency_ms": 21.19069200125523,
           "cost_usd": 0.000015100000000000001,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 15.412950000609271,
+      "latency_ms": 21.257430002151523,
       "cost_usd": 0.000015100000000000001,
       "input_tokens": 96,
       "output_tokens": 11,
@@ -2409,17 +2409,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "The dashboard is slow when I open the reports page",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nThe dashboard is slow when I open the reports page",
           "output": "{\"category\": \"technical\", \"priority\": \"medium\"}",
           "input_tokens": 94,
           "output_tokens": 11,
-          "latency_ms": 19.15844999894034,
+          "latency_ms": 21.311857002729084,
           "cost_usd": 0.0000149,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 19.208780999178998,
+      "latency_ms": 21.361019997129915,
       "cost_usd": 0.0000149,
       "input_tokens": 94,
       "output_tokens": 11,
@@ -2460,17 +2460,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "Just checking: is there a rate limit on the API?",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nJust checking: is there a rate limit on the API?",
           "output": "{\"category\": \"technical\", \"priority\": \"low\"}",
           "input_tokens": 93,
           "output_tokens": 11,
-          "latency_ms": 19.835144998069154,
+          "latency_ms": 20.21479500035639,
           "cost_usd": 0.0000148,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 19.878716000675922,
+      "latency_ms": 20.26133900290006,
       "cost_usd": 0.0000148,
       "input_tokens": 93,
       "output_tokens": 11,
@@ -2511,17 +2511,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "The export button is broken and nothing downloads",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nThe export button is broken and nothing downloads",
           "output": "{\"category\": \"technical\", \"priority\": \"high\"}",
           "input_tokens": 94,
           "output_tokens": 11,
-          "latency_ms": 18.83356200050912,
+          "latency_ms": 18.714658999670064,
           "cost_usd": 0.0000149,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 18.884445998992305,
+      "latency_ms": 18.80889500171179,
       "cost_usd": 0.0000149,
       "input_tokens": 94,
       "output_tokens": 11,
@@ -2562,17 +2562,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "The app crash happens on startup and we cannot work",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nThe app crash happens on startup and we cannot work",
           "output": "{\"category\": \"technical\", \"priority\": \"high\"}",
           "input_tokens": 94,
           "output_tokens": 11,
-          "latency_ms": 12.513896999735152,
+          "latency_ms": 17.789394998544594,
           "cost_usd": 0.0000149,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 12.546295998618007,
+      "latency_ms": 17.837777002569055,
       "cost_usd": 0.0000149,
       "input_tokens": 94,
       "output_tokens": 11,
@@ -2613,17 +2613,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "I am locked out of my account and cannot log in",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nI am locked out of my account and cannot log in",
           "output": "{\"category\": \"account\", \"priority\": \"high\"}",
           "input_tokens": 93,
           "output_tokens": 10,
-          "latency_ms": 18.159471997932997,
+          "latency_ms": 20.160219002718804,
           "cost_usd": 0.0000143,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 18.19185300337267,
+      "latency_ms": 20.21429900196381,
       "cost_usd": 0.0000143,
       "input_tokens": 93,
       "output_tokens": 10,
@@ -2664,17 +2664,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "How do I change my email address on the profile?",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nHow do I change my email address on the profile?",
           "output": "{\"category\": \"account\", \"priority\": \"low\"}",
           "input_tokens": 93,
           "output_tokens": 10,
-          "latency_ms": 11.128191003081156,
+          "latency_ms": 15.148222999414429,
           "cost_usd": 0.0000143,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 11.153070998261683,
+      "latency_ms": 15.196147000096971,
       "cost_usd": 0.0000143,
       "input_tokens": 93,
       "output_tokens": 10,
@@ -2715,17 +2715,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "I forgot my password and the reset link has expired",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nI forgot my password and the reset link has expired",
           "output": "{\"category\": \"account\", \"priority\": \"medium\"}",
           "input_tokens": 94,
           "output_tokens": 11,
-          "latency_ms": 17.15735000107088,
+          "latency_ms": 17.162214000563836,
           "cost_usd": 0.0000149,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 17.18706500105327,
+      "latency_ms": 17.21627499864553,
       "cost_usd": 0.0000149,
       "input_tokens": 94,
       "output_tokens": 11,
@@ -2766,17 +2766,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "Is it possible to enable two-factor login for my team?",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nIs it possible to enable two-factor login for my team?",
           "output": "{\"category\": \"account\", \"priority\": \"low\"}",
           "input_tokens": 95,
           "output_tokens": 10,
-          "latency_ms": 17.115349997766316,
+          "latency_ms": 18.001796001044568,
           "cost_usd": 0.0000145,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 17.14887600246584,
+      "latency_ms": 18.069380999804707,
       "cost_usd": 0.0000145,
       "input_tokens": 95,
       "output_tokens": 10,
@@ -2817,17 +2817,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "My username shows the old company name",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nMy username shows the old company name",
           "output": "{\"category\": \"account\", \"priority\": \"medium\"}",
           "input_tokens": 91,
           "output_tokens": 11,
-          "latency_ms": 19.19371899930411,
+          "latency_ms": 22.711658999469364,
           "cost_usd": 0.000014599999999999999,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 19.232938000641298,
+      "latency_ms": 22.75079600076424,
       "cost_usd": 0.000014599999999999999,
       "input_tokens": 91,
       "output_tokens": 11,
@@ -2868,17 +2868,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "My package has not arrived and the tracking has not updated in a week",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nMy package has not arrived and the tracking has not updated in a week",
           "output": "{\"category\": \"shipping\", \"priority\": \"medium\"}",
           "input_tokens": 99,
           "output_tokens": 11,
-          "latency_ms": 28.96470199993928,
+          "latency_ms": 33.872281997901155,
           "cost_usd": 0.0000154,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 29.01073099928908,
+      "latency_ms": 33.916641001269454,
       "cost_usd": 0.0000154,
       "input_tokens": 99,
       "output_tokens": 11,
@@ -2919,17 +2919,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "The courier marked it delivered but nothing came, urgent please",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nThe courier marked it delivered but nothing came, urgent please",
           "output": "{\"category\": \"shipping\", \"priority\": \"high\"}",
           "input_tokens": 97,
           "output_tokens": 11,
-          "latency_ms": 18.332142997678602,
+          "latency_ms": 22.995635998086073,
           "cost_usd": 0.000015200000000000002,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 18.372252998233307,
+      "latency_ms": 23.04340100090485,
       "cost_usd": 0.000015200000000000002,
       "input_tokens": 97,
       "output_tokens": 11,
@@ -2970,17 +2970,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "Curious when the next batch will be shipped",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nCurious when the next batch will be shipped",
           "output": "{\"category\": \"shipping\", \"priority\": \"low\"}",
           "input_tokens": 92,
           "output_tokens": 10,
-          "latency_ms": 19.09207200151286,
+          "latency_ms": 44.3951939996623,
           "cost_usd": 0.000014200000000000001,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 19.138346000545425,
+      "latency_ms": 44.44433399839909,
       "cost_usd": 0.000014200000000000001,
       "input_tokens": 92,
       "output_tokens": 10,
@@ -3021,17 +3021,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "The delivery address label has a typo",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nThe delivery address label has a typo",
           "output": "{\"category\": \"shipping\", \"priority\": \"medium\"}",
           "input_tokens": 91,
           "output_tokens": 11,
-          "latency_ms": 8.12135499654687,
+          "latency_ms": 9.8489129995869,
           "cost_usd": 0.000014599999999999999,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 8.166649000486359,
+      "latency_ms": 9.914895999827422,
       "cost_usd": 0.000014599999999999999,
       "input_tokens": 91,
       "output_tokens": 11,
@@ -3072,17 +3072,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "Tracking says my package arrived at the wrong city",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nTracking says my package arrived at the wrong city",
           "output": "{\"category\": \"shipping\", \"priority\": \"medium\"}",
           "input_tokens": 94,
           "output_tokens": 11,
-          "latency_ms": 23.73020500090206,
+          "latency_ms": 28.659933999733767,
           "cost_usd": 0.0000149,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 23.77614299984998,
+      "latency_ms": 28.704921998723876,
       "cost_usd": 0.0000149,
       "input_tokens": 94,
       "output_tokens": 11,
@@ -3123,17 +3123,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "I was charged twice for my invoice this month, please fix this ASAP (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nI was charged twice for my invoice this month, please fix this ASAP (customer on the Pro plan)",
           "output": "{\"category\": \"billing\", \"priority\": \"high\"}",
           "input_tokens": 105,
           "output_tokens": 10,
-          "latency_ms": 15.039373000035994,
+          "latency_ms": 22.114813997177407,
           "cost_usd": 0.0000155,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 15.07422999929986,
+      "latency_ms": 22.163008001371054,
       "cost_usd": 0.0000155,
       "input_tokens": 105,
       "output_tokens": 10,
@@ -3174,17 +3174,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "Where can I download last month's invoice? (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nWhere can I download last month's invoice? (customer on the Pro plan)",
           "output": "{\"category\": \"billing\", \"priority\": \"high\"}",
           "input_tokens": 99,
           "output_tokens": 10,
-          "latency_ms": 15.540191998297814,
+          "latency_ms": 13.532943001337117,
           "cost_usd": 0.0000149,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 15.587442998366896,
+      "latency_ms": 13.589936999778729,
       "cost_usd": 0.0000149,
       "input_tokens": 99,
       "output_tokens": 10,
@@ -3225,17 +3225,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "Question: can I pay by card instead of bank transfer? (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nQuestion: can I pay by card instead of bank transfer? (customer on the Pro plan)",
           "output": "{\"category\": \"billing\", \"priority\": \"low\"}",
           "input_tokens": 101,
           "output_tokens": 10,
-          "latency_ms": 18.238226999528706,
+          "latency_ms": 23.960997998074163,
           "cost_usd": 0.000015100000000000001,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 18.28879100139602,
+      "latency_ms": 24.008049000258325,
       "cost_usd": 0.000015100000000000001,
       "input_tokens": 101,
       "output_tokens": 10,
@@ -3276,17 +3276,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "My payment failed but the money left my card, I need a refund (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nMy payment failed but the money left my card, I need a refund (customer on the Pro plan)",
           "output": "{\"category\": \"billing\", \"priority\": \"medium\"}",
           "input_tokens": 103,
           "output_tokens": 11,
-          "latency_ms": 18.699324999033706,
+          "latency_ms": 21.539490000577644,
           "cost_usd": 0.0000158,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 18.743253000138793,
+      "latency_ms": 21.587652998277918,
       "cost_usd": 0.0000158,
       "input_tokens": 103,
       "output_tokens": 11,
@@ -3327,17 +3327,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "I'm wondering how the subscription price changes next year (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nI'm wondering how the subscription price changes next year (customer on the Pro plan)",
           "output": "{\"category\": \"billing\", \"priority\": \"low\"}",
           "input_tokens": 103,
           "output_tokens": 10,
-          "latency_ms": 14.688312003272586,
+          "latency_ms": 11.47296599810943,
           "cost_usd": 0.0000153,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 14.72897900021053,
+      "latency_ms": 11.526067999511724,
       "cost_usd": 0.0000153,
       "input_tokens": 103,
       "output_tokens": 10,
@@ -3378,17 +3378,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "The API returns a 500 error on every request, we are down (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nThe API returns a 500 error on every request, we are down (customer on the Pro plan)",
           "output": "{\"category\": \"technical\", \"priority\": \"high\"}",
           "input_tokens": 102,
           "output_tokens": 11,
-          "latency_ms": 17.75672000076156,
+          "latency_ms": 21.03965599962976,
           "cost_usd": 0.000015700000000000002,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 17.7927520016965,
+      "latency_ms": 21.08676900024875,
       "cost_usd": 0.000015700000000000002,
       "input_tokens": 102,
       "output_tokens": 11,
@@ -3429,17 +3429,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "The dashboard is slow when I open the reports page (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nThe dashboard is slow when I open the reports page (customer on the Pro plan)",
           "output": "{\"category\": \"technical\", \"priority\": \"medium\"}",
           "input_tokens": 101,
           "output_tokens": 11,
-          "latency_ms": 18.761553001240827,
+          "latency_ms": 23.51941900269594,
           "cost_usd": 0.000015600000000000003,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 18.821969999407884,
+      "latency_ms": 23.57039999697008,
       "cost_usd": 0.000015600000000000003,
       "input_tokens": 101,
       "output_tokens": 11,
@@ -3480,17 +3480,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "Just checking: is there a rate limit on the API? (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nJust checking: is there a rate limit on the API? (customer on the Pro plan)",
           "output": "{\"category\": \"technical\", \"priority\": \"low\"}",
           "input_tokens": 100,
           "output_tokens": 11,
-          "latency_ms": 11.154829000588506,
+          "latency_ms": 13.361088997044135,
           "cost_usd": 0.0000155,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 11.18618699911167,
+      "latency_ms": 13.420562001556391,
       "cost_usd": 0.0000155,
       "input_tokens": 100,
       "output_tokens": 11,
@@ -3531,17 +3531,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "The export button is broken and nothing downloads (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nThe export button is broken and nothing downloads (customer on the Pro plan)",
           "output": "{\"category\": \"technical\", \"priority\": \"high\"}",
           "input_tokens": 100,
           "output_tokens": 11,
-          "latency_ms": 19.2685519978113,
+          "latency_ms": 20.520105001196498,
           "cost_usd": 0.0000155,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 19.299562001833692,
+      "latency_ms": 20.58314399982919,
       "cost_usd": 0.0000155,
       "input_tokens": 100,
       "output_tokens": 11,
@@ -3582,17 +3582,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "The app crash happens on startup and we cannot work (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nThe app crash happens on startup and we cannot work (customer on the Pro plan)",
           "output": "{\"category\": \"technical\", \"priority\": \"high\"}",
           "input_tokens": 101,
           "output_tokens": 11,
-          "latency_ms": 9.560251000948483,
+          "latency_ms": 12.865923999925144,
           "cost_usd": 0.000015600000000000003,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 9.609475997422123,
+      "latency_ms": 12.91326300270157,
       "cost_usd": 0.000015600000000000003,
       "input_tokens": 101,
       "output_tokens": 11,
@@ -3633,17 +3633,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "I am locked out of my account and cannot log in (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nI am locked out of my account and cannot log in (customer on the Pro plan)",
           "output": "{\"category\": \"account\", \"priority\": \"high\"}",
           "input_tokens": 100,
           "output_tokens": 10,
-          "latency_ms": 15.13172500199289,
+          "latency_ms": 17.60114100034116,
           "cost_usd": 0.000015,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 15.170839000347769,
+      "latency_ms": 17.64602099865442,
       "cost_usd": 0.000015,
       "input_tokens": 100,
       "output_tokens": 10,
@@ -3684,17 +3684,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "How do I change my email address on the profile? (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nHow do I change my email address on the profile? (customer on the Pro plan)",
           "output": "{\"category\": \"account\", \"priority\": \"low\"}",
           "input_tokens": 100,
           "output_tokens": 10,
-          "latency_ms": 15.15853399905609,
+          "latency_ms": 18.39155500056222,
           "cost_usd": 0.000015,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 15.191974001936615,
+      "latency_ms": 18.447071997798048,
       "cost_usd": 0.000015,
       "input_tokens": 100,
       "output_tokens": 10,
@@ -3735,17 +3735,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "I forgot my password and the reset link has expired (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nI forgot my password and the reset link has expired (customer on the Pro plan)",
           "output": "{\"category\": \"account\", \"priority\": \"medium\"}",
           "input_tokens": 101,
           "output_tokens": 11,
-          "latency_ms": 16.155807999894023,
+          "latency_ms": 18.367060998571105,
           "cost_usd": 0.000015600000000000003,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 16.208984001423232,
+      "latency_ms": 18.41504399999394,
       "cost_usd": 0.000015600000000000003,
       "input_tokens": 101,
       "output_tokens": 11,
@@ -3786,17 +3786,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "Is it possible to enable two-factor login for my team? (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nIs it possible to enable two-factor login for my team? (customer on the Pro plan)",
           "output": "{\"category\": \"account\", \"priority\": \"low\"}",
           "input_tokens": 102,
           "output_tokens": 10,
-          "latency_ms": 17.660527002590243,
+          "latency_ms": 18.62168899970129,
           "cost_usd": 0.000015200000000000002,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 17.688020998321008,
+      "latency_ms": 18.667987998924218,
       "cost_usd": 0.000015200000000000002,
       "input_tokens": 102,
       "output_tokens": 10,
@@ -3837,17 +3837,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "My username shows the old company name (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nMy username shows the old company name (customer on the Pro plan)",
           "output": "{\"category\": \"account\", \"priority\": \"medium\"}",
           "input_tokens": 98,
           "output_tokens": 11,
-          "latency_ms": 19.2510319975554,
+          "latency_ms": 21.135521001269808,
           "cost_usd": 0.0000153,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 19.31771499948809,
+      "latency_ms": 21.181744999921648,
       "cost_usd": 0.0000153,
       "input_tokens": 98,
       "output_tokens": 11,
@@ -3888,17 +3888,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "My package has not arrived and the tracking has not updated in a week (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nMy package has not arrived and the tracking has not updated in a week (customer on the Pro plan)",
           "output": "{\"category\": \"shipping\", \"priority\": \"medium\"}",
           "input_tokens": 105,
           "output_tokens": 11,
-          "latency_ms": 12.717022000288125,
+          "latency_ms": 16.24098799948115,
           "cost_usd": 0.000016,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 12.746155996865127,
+      "latency_ms": 16.288323000480887,
       "cost_usd": 0.000016,
       "input_tokens": 105,
       "output_tokens": 11,
@@ -3939,17 +3939,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "The courier marked it delivered but nothing came, urgent please (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nThe courier marked it delivered but nothing came, urgent please (customer on the Pro plan)",
           "output": "{\"category\": \"shipping\", \"priority\": \"high\"}",
           "input_tokens": 104,
           "output_tokens": 11,
-          "latency_ms": 14.139332000922877,
+          "latency_ms": 18.994591999216937,
           "cost_usd": 0.0000159,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 14.182769999024458,
+      "latency_ms": 19.043594002141617,
       "cost_usd": 0.0000159,
       "input_tokens": 104,
       "output_tokens": 11,
@@ -3990,17 +3990,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "Curious when the next batch will be shipped (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nCurious when the next batch will be shipped (customer on the Pro plan)",
           "output": "{\"category\": \"shipping\", \"priority\": \"low\"}",
           "input_tokens": 99,
           "output_tokens": 10,
-          "latency_ms": 15.237616000376875,
+          "latency_ms": 21.149165000679204,
           "cost_usd": 0.0000149,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 15.275062000000617,
+      "latency_ms": 21.200860999670113,
       "cost_usd": 0.0000149,
       "input_tokens": 99,
       "output_tokens": 10,
@@ -4041,17 +4041,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "The delivery address label has a typo (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nThe delivery address label has a typo (customer on the Pro plan)",
           "output": "{\"category\": \"shipping\", \"priority\": \"medium\"}",
           "input_tokens": 97,
           "output_tokens": 11,
-          "latency_ms": 11.127392001071712,
+          "latency_ms": 15.463058000023011,
           "cost_usd": 0.000015200000000000002,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 11.164682000526227,
+      "latency_ms": 15.505457999097416,
       "cost_usd": 0.000015200000000000002,
       "input_tokens": 97,
       "output_tokens": 11,
@@ -4092,17 +4092,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "Tracking says my package arrived at the wrong city (customer on the Pro plan)",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nTracking says my package arrived at the wrong city (customer on the Pro plan)",
           "output": "{\"category\": \"shipping\", \"priority\": \"medium\"}",
           "input_tokens": 101,
           "output_tokens": 11,
-          "latency_ms": 18.645346000994323,
+          "latency_ms": 18.153970999264857,
           "cost_usd": 0.000015600000000000003,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 18.691512999794213,
+      "latency_ms": 18.210466998425545,
       "cost_usd": 0.000015600000000000003,
       "input_tokens": 101,
       "output_tokens": 11,
@@ -4143,17 +4143,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "I was charged twice for my invoice this month, please fix this ASAP",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nI was charged twice for my invoice this month, please fix this ASAP",
           "output": "{\"category\": \"billing\", \"priority\": \"high\"}",
           "input_tokens": 98,
           "output_tokens": 10,
-          "latency_ms": 17.606952002097387,
+          "latency_ms": 18.296712998562725,
           "cost_usd": 0.0000148,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 17.663620001258096,
+      "latency_ms": 18.358010001975344,
       "cost_usd": 0.0000148,
       "input_tokens": 98,
       "output_tokens": 10,
@@ -4194,17 +4194,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "Where can I download last month's invoice?",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nWhere can I download last month's invoice?",
           "output": "{\"category\": \"billing\", \"priority\": \"high\"}",
           "input_tokens": 92,
           "output_tokens": 10,
-          "latency_ms": 19.292611999844667,
+          "latency_ms": 22.791875002440065,
           "cost_usd": 0.000014200000000000001,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 19.332690000737784,
+      "latency_ms": 22.839453999040416,
       "cost_usd": 0.000014200000000000001,
       "input_tokens": 92,
       "output_tokens": 10,
@@ -4245,17 +4245,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "Question: can I pay by card instead of bank transfer?",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nQuestion: can I pay by card instead of bank transfer?",
           "output": "{\"category\": \"billing\", \"priority\": \"low\"}",
           "input_tokens": 95,
           "output_tokens": 10,
-          "latency_ms": 20.67741100108833,
+          "latency_ms": 28.289165999012766,
           "cost_usd": 0.0000145,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 20.723192999867024,
+      "latency_ms": 28.33713899963186,
       "cost_usd": 0.0000145,
       "input_tokens": 95,
       "output_tokens": 10,
@@ -4296,17 +4296,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "My payment failed but the money left my card, I need a refund",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nMy payment failed but the money left my card, I need a refund",
           "output": "{\"category\": \"billing\", \"priority\": \"medium\"}",
           "input_tokens": 97,
           "output_tokens": 11,
-          "latency_ms": 14.509990000078687,
+          "latency_ms": 22.958569003094453,
           "cost_usd": 0.000015200000000000002,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 14.55329600139521,
+      "latency_ms": 23.00500099954661,
       "cost_usd": 0.000015200000000000002,
       "input_tokens": 97,
       "output_tokens": 11,
@@ -4347,17 +4347,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "I'm wondering how the subscription price changes next year",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nI'm wondering how the subscription price changes next year",
           "output": "{\"category\": \"billing\", \"priority\": \"low\"}",
           "input_tokens": 96,
           "output_tokens": 10,
-          "latency_ms": 8.120655998936854,
+          "latency_ms": 11.05465699947672,
           "cost_usd": 0.0000146,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 8.157091000612127,
+      "latency_ms": 11.11102499999106,
       "cost_usd": 0.0000146,
       "input_tokens": 96,
       "output_tokens": 10,
@@ -4398,17 +4398,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "The API returns a 500 error on every request, we are down",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nThe API returns a 500 error on every request, we are down",
           "output": "{\"category\": \"technical\", \"priority\": \"high\"}",
           "input_tokens": 96,
           "output_tokens": 11,
-          "latency_ms": 13.615150000987342,
+          "latency_ms": 15.759310997964349,
           "cost_usd": 0.000015100000000000001,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 13.643890000821557,
+      "latency_ms": 15.805982999154367,
       "cost_usd": 0.000015100000000000001,
       "input_tokens": 96,
       "output_tokens": 11,
@@ -4449,17 +4449,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "The dashboard is slow when I open the reports page",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nThe dashboard is slow when I open the reports page",
           "output": "{\"category\": \"technical\", \"priority\": \"medium\"}",
           "input_tokens": 94,
           "output_tokens": 11,
-          "latency_ms": 19.135828002617927,
+          "latency_ms": 20.69502599988482,
           "cost_usd": 0.0000149,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 19.181716997991316,
+      "latency_ms": 20.73981500143418,
       "cost_usd": 0.0000149,
       "input_tokens": 94,
       "output_tokens": 11,
@@ -4500,17 +4500,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "Just checking: is there a rate limit on the API?",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nJust checking: is there a rate limit on the API?",
           "output": "{\"category\": \"technical\", \"priority\": \"low\"}",
           "input_tokens": 93,
           "output_tokens": 11,
-          "latency_ms": 18.62167799845338,
+          "latency_ms": 20.13078699746984,
           "cost_usd": 0.0000148,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 18.653237999387784,
+      "latency_ms": 20.177313999738544,
       "cost_usd": 0.0000148,
       "input_tokens": 93,
       "output_tokens": 11,
@@ -4551,17 +4551,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "The export button is broken and nothing downloads",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nThe export button is broken and nothing downloads",
           "output": "{\"category\": \"technical\", \"priority\": \"high\"}",
           "input_tokens": 94,
           "output_tokens": 11,
-          "latency_ms": 18.96031599972048,
+          "latency_ms": 22.971997001150157,
           "cost_usd": 0.0000149,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 19.00694700088934,
+      "latency_ms": 23.028145002172096,
       "cost_usd": 0.0000149,
       "input_tokens": 94,
       "output_tokens": 11,
@@ -4602,17 +4602,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "The app crash happens on startup and we cannot work",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nThe app crash happens on startup and we cannot work",
           "output": "{\"category\": \"technical\", \"priority\": \"high\"}",
           "input_tokens": 94,
           "output_tokens": 11,
-          "latency_ms": 12.37590500022634,
+          "latency_ms": 15.60006600266206,
           "cost_usd": 0.0000149,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 12.409912000293843,
+      "latency_ms": 15.647180000087246,
       "cost_usd": 0.0000149,
       "input_tokens": 94,
       "output_tokens": 11,
@@ -4653,17 +4653,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "I am locked out of my account and cannot log in",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nI am locked out of my account and cannot log in",
           "output": "{\"category\": \"account\", \"priority\": \"high\"}",
           "input_tokens": 93,
           "output_tokens": 10,
-          "latency_ms": 18.220488000224577,
+          "latency_ms": 21.674603998690145,
           "cost_usd": 0.0000143,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 18.26209499995457,
+      "latency_ms": 21.721754001191584,
       "cost_usd": 0.0000143,
       "input_tokens": 93,
       "output_tokens": 10,
@@ -4704,17 +4704,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "How do I change my email address on the profile?",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nHow do I change my email address on the profile?",
           "output": "{\"category\": \"account\", \"priority\": \"low\"}",
           "input_tokens": 93,
           "output_tokens": 10,
-          "latency_ms": 11.274540000158595,
+          "latency_ms": 16.215980998822488,
           "cost_usd": 0.0000143,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 11.302806000458077,
+      "latency_ms": 16.26631500039366,
       "cost_usd": 0.0000143,
       "input_tokens": 93,
       "output_tokens": 10,
@@ -4755,17 +4755,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "I forgot my password and the reset link has expired",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nI forgot my password and the reset link has expired",
           "output": "{\"category\": \"account\", \"priority\": \"medium\"}",
           "input_tokens": 94,
           "output_tokens": 11,
-          "latency_ms": 17.16845700138947,
+          "latency_ms": 18.99837699966156,
           "cost_usd": 0.0000149,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 17.195185002492508,
+      "latency_ms": 19.047333000344224,
       "cost_usd": 0.0000149,
       "input_tokens": 94,
       "output_tokens": 11,
@@ -4806,17 +4806,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "Is it possible to enable two-factor login for my team?",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nIs it possible to enable two-factor login for my team?",
           "output": "{\"category\": \"account\", \"priority\": \"low\"}",
           "input_tokens": 95,
           "output_tokens": 10,
-          "latency_ms": 17.096899999160087,
+          "latency_ms": 19.29201800157898,
           "cost_usd": 0.0000145,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 17.1435019983619,
+      "latency_ms": 19.338818001415348,
       "cost_usd": 0.0000145,
       "input_tokens": 95,
       "output_tokens": 10,
@@ -4857,17 +4857,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "My username shows the old company name",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nMy username shows the old company name",
           "output": "{\"category\": \"account\", \"priority\": \"medium\"}",
           "input_tokens": 91,
           "output_tokens": 11,
-          "latency_ms": 19.152243999997154,
+          "latency_ms": 19.235921998188132,
           "cost_usd": 0.000014599999999999999,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 19.226708998758113,
+      "latency_ms": 19.283380002889317,
       "cost_usd": 0.000014599999999999999,
       "input_tokens": 91,
       "output_tokens": 11,
@@ -4908,17 +4908,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "My package has not arrived and the tracking has not updated in a week",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nMy package has not arrived and the tracking has not updated in a week",
           "output": "{\"category\": \"shipping\", \"priority\": \"medium\"}",
           "input_tokens": 99,
           "output_tokens": 11,
-          "latency_ms": 22.798829999373993,
+          "latency_ms": 27.00980200097547,
           "cost_usd": 0.0000154,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 22.825281997938873,
+      "latency_ms": 27.068314997450216,
       "cost_usd": 0.0000154,
       "input_tokens": 99,
       "output_tokens": 11,
@@ -4959,17 +4959,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "The courier marked it delivered but nothing came, urgent please",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nThe courier marked it delivered but nothing came, urgent please",
           "output": "{\"category\": \"shipping\", \"priority\": \"high\"}",
           "input_tokens": 97,
           "output_tokens": 11,
-          "latency_ms": 17.834080001193797,
+          "latency_ms": 19.49546999821905,
           "cost_usd": 0.000015200000000000002,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 17.866213998786407,
+      "latency_ms": 19.545185001334175,
       "cost_usd": 0.000015200000000000002,
       "input_tokens": 97,
       "output_tokens": 11,
@@ -5010,17 +5010,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "Curious when the next batch will be shipped",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nCurious when the next batch will be shipped",
           "output": "{\"category\": \"shipping\", \"priority\": \"low\"}",
           "input_tokens": 92,
           "output_tokens": 10,
-          "latency_ms": 17.54898599756416,
+          "latency_ms": 18.75814300001366,
           "cost_usd": 0.000014200000000000001,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 17.578547998709837,
+      "latency_ms": 18.802623999363277,
       "cost_usd": 0.000014200000000000001,
       "input_tokens": 92,
       "output_tokens": 10,
@@ -5061,17 +5061,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "The delivery address label has a typo",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nThe delivery address label has a typo",
           "output": "{\"category\": \"shipping\", \"priority\": \"medium\"}",
           "input_tokens": 91,
           "output_tokens": 11,
-          "latency_ms": 8.231179002905264,
+          "latency_ms": 10.781472003145609,
           "cost_usd": 0.000014599999999999999,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 8.26529600089998,
+      "latency_ms": 10.831847001099959,
       "cost_usd": 0.000014599999999999999,
       "input_tokens": 91,
       "output_tokens": 11,
@@ -5112,17 +5112,17 @@
       "calls": [
         {
           "model": "simulated-llm",
-          "prompt": "Tracking says my package arrived at the wrong city",
+          "prompt": "[system]\nYou are a support triage assistant. Classify the customer's ticket.\nReply with only a JSON object: {\"category\": one of billing|technical|account|shipping, \"priority\": one of low|medium|high}.\nPriority is high when the customer cannot work, is locked out, or was charged incorrectly; low for general questions; otherwise medium.\n\n[user]\nTracking says my package arrived at the wrong city",
           "output": "{\"category\": \"shipping\", \"priority\": \"medium\"}",
           "input_tokens": 94,
           "output_tokens": 11,
-          "latency_ms": 16.463045998534653,
+          "latency_ms": 18.288958999619354,
           "cost_usd": 0.0000149,
           "purpose": "app",
           "error": null
         }
       ],
-      "latency_ms": 16.490185997099616,
+      "latency_ms": 18.337931000132812,
       "cost_usd": 0.0000149,
       "input_tokens": 94,
       "output_tokens": 11,
