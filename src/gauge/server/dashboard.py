@@ -52,9 +52,10 @@ c3.metric("Cost / run", f"${latest['cost ($)']:.4f}", None if prev is None else 
 c4.metric("Latency p95", f"{latest['p95 (ms)']:.0f} ms", None if prev is None else f"{latest['p95 (ms)'] - prev['p95 (ms)']:+.0f} ms", delta_color="inverse")
 
 
-chart_df = df.set_index("when")
+df["run #"] = range(1, len(df) + 1)
+chart_df = df.set_index("run #")
 left, mid, right = st.columns(3)
-left.subheader("Pass rate per commit")
+left.subheader("Pass rate per run (oldest to newest)")
 left.line_chart(chart_df["pass rate"])
 mid.subheader("Cost per run ($)")
 mid.bar_chart(chart_df["cost ($)"])
@@ -62,7 +63,7 @@ right.subheader("Latency p95 (ms)")
 right.line_chart(chart_df["p95 (ms)"])
 
 st.subheader("Runs")
-st.dataframe(df.drop(columns=["label", "id"]).sort_values("when", ascending=False), use_container_width=True, hide_index=True)
+st.dataframe(df.drop(columns=["run #", "id"]).sort_values("when", ascending=False), use_container_width=True, hide_index=True)
 
 st.subheader("Failing cases and traces")
 options = {f"{r['commit']} · {r['when']:%Y-%m-%d %H:%M} · {r['pass rate']:.1%}": r["id"] for _, r in df.sort_values("when", ascending=False).iterrows()}
