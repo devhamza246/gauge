@@ -5,6 +5,7 @@ name: gauge
 
 services:
   postgres:
+    container_name: gauge-postgres
     image: postgres:16-alpine
     restart: unless-stopped
     environment:
@@ -21,6 +22,7 @@ services:
     networks: [default]
 
   api:
+    container_name: gauge-api
     build: .
     restart: unless-stopped
     environment:
@@ -40,6 +42,7 @@ services:
     networks: [default, ingress_default]
 
   dashboard:
+    container_name: gauge-dashboard
     build: .
     restart: unless-stopped
     command: ["streamlit", "run", "/app/dashboard.py", "--server.port=8501", "--server.address=0.0.0.0",
