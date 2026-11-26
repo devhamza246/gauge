@@ -93,11 +93,11 @@ Honest status, so you can weigh the claims:
   Swap in `wrap_anthropic` / `wrap_openai` to evaluate a real model.
 - **Real data:** results from the Docsift (40 documents) and Stacklight (53 questions) eval harnesses are imported into
   the hosted dashboard with `gauge import`. They are those projects' own numbers, not re-measured by Gauge.
-- **Judge calibration is not yet measured.** [`examples/calibration`](examples/calibration) holds 20 human-labelled
-  cases (10 faithful, 10 not). Run `ANTHROPIC_API_KEY=... bash scripts/calibrate.sh` (about 20 calls to
-  `claude-haiku-5-5`), or trigger the **Judge calibration** workflow after adding an `ANTHROPIC_API_KEY` repository
-  secret. It writes `examples/calibration/REPORT.md` and a cassette so the result can be re-checked offline. Until
-  that report is committed, treat judge scores as unvalidated; the target is at least 90% agreement.
+- **Judge calibration: 19 of 20 (95%) agreement with human labels** for the `rag_faithfulness` scorer with `claude-haiku-5-5`
+  (target at least 90%; [`REPORT.md`](examples/calibration/REPORT.md), recorded replies in `judge.cassette.jsonl`, re-checkable offline with
+  `gauge calibrate --judge-mode replay`). Read it narrowly: the 20 labels are short, clear-cut cases I wrote by hand (10 faithful,
+  10 not), and the one disagreement (c13) is arguable. It shows the judge handles easy cases, not that it is accurate on your data;
+  calibrate again on labels from your own domain. Reproduce with `ANTHROPIC_API_KEY=... bash scripts/calibrate.sh`.
 - **Out of scope for v0.1:** hosted SaaS, human annotation UI, distributed tracing, alerting, prompt versioning,
   support for every provider (Anthropic and OpenAI-compatible judges; Anthropic and OpenAI client wrappers).
 
