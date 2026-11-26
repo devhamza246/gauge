@@ -1,0 +1,5132 @@
+{
+  "suite": "support-bot",
+  "commit": null,
+  "branch": null,
+  "pr": null,
+  "message": null,
+  "started_at": "2026-11-26T13:39:09.114574+00:00",
+  "source": "gauge",
+  "summary": {
+    "total": 100,
+    "passed": 90,
+    "failed": 10,
+    "errors": 0,
+    "pass_rate": 0.9,
+    "cost_usd": 0.0015008,
+    "judge_cost_usd": 0.0,
+    "input_tokens": 9708,
+    "output_tokens": 1060,
+    "latency_p50_ms": 17.345711999951163,
+    "latency_p95_ms": 21.91510400007246,
+    "duration_s": 0.23526848999972572
+  },
+  "thresholds": {
+    "max_pass_rate_drop": 0.02,
+    "max_new_failures": 0,
+    "max_cost_increase": 0.25,
+    "max_latency_increase": 5.0,
+    "min_pass_rate": null
+  },
+  "cases": [
+    {
+      "case_id": "t001",
+      "tags": [
+        "billing"
+      ],
+      "input": "I was charged twice for my invoice this month, please fix this ASAP",
+      "expected": {
+        "category": "billing",
+        "priority": "high"
+      },
+      "output": {
+        "category": "billing",
+        "priority": "high"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "I was charged twice for my invoice this month, please fix this ASAP",
+          "output": "{\"category\": \"billing\", \"priority\": \"high\"}",
+          "input_tokens": 98,
+          "output_tokens": 10,
+          "latency_ms": 17.298047001531813,
+          "cost_usd": 0.0000148,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 17.345711999951163,
+      "cost_usd": 0.0000148,
+      "input_tokens": 98,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t002",
+      "tags": [
+        "billing"
+      ],
+      "input": "Where can I download last month's invoice?",
+      "expected": {
+        "category": "billing",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "billing",
+        "priority": "high"
+      },
+      "passed": false,
+      "score": 0.75,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": false,
+          "score": 0.5,
+          "reason": "mismatched fields: ['priority']",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "Where can I download last month's invoice?",
+          "output": "{\"category\": \"billing\", \"priority\": \"high\"}",
+          "input_tokens": 92,
+          "output_tokens": 10,
+          "latency_ms": 18.362726998020662,
+          "cost_usd": 0.000014200000000000001,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 18.421342996589374,
+      "cost_usd": 0.000014200000000000001,
+      "input_tokens": 92,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t003",
+      "tags": [
+        "billing"
+      ],
+      "input": "Question: can I pay by card instead of bank transfer?",
+      "expected": {
+        "category": "billing",
+        "priority": "low"
+      },
+      "output": {
+        "category": "billing",
+        "priority": "low"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "Question: can I pay by card instead of bank transfer?",
+          "output": "{\"category\": \"billing\", \"priority\": \"low\"}",
+          "input_tokens": 95,
+          "output_tokens": 10,
+          "latency_ms": 21.454761001223233,
+          "cost_usd": 0.0000145,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 21.50480099953711,
+      "cost_usd": 0.0000145,
+      "input_tokens": 95,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t004",
+      "tags": [
+        "billing"
+      ],
+      "input": "My payment failed but the money left my card, I need a refund",
+      "expected": {
+        "category": "billing",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "billing",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "My payment failed but the money left my card, I need a refund",
+          "output": "{\"category\": \"billing\", \"priority\": \"medium\"}",
+          "input_tokens": 97,
+          "output_tokens": 11,
+          "latency_ms": 12.10562100095558,
+          "cost_usd": 0.000015200000000000002,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 12.142242001573322,
+      "cost_usd": 0.000015200000000000002,
+      "input_tokens": 97,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t005",
+      "tags": [
+        "billing"
+      ],
+      "input": "I'm wondering how the subscription price changes next year",
+      "expected": {
+        "category": "billing",
+        "priority": "low"
+      },
+      "output": {
+        "category": "billing",
+        "priority": "low"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "I'm wondering how the subscription price changes next year",
+          "output": "{\"category\": \"billing\", \"priority\": \"low\"}",
+          "input_tokens": 96,
+          "output_tokens": 10,
+          "latency_ms": 8.15094300196506,
+          "cost_usd": 0.0000146,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 8.200111999030923,
+      "cost_usd": 0.0000146,
+      "input_tokens": 96,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t006",
+      "tags": [
+        "technical"
+      ],
+      "input": "The API returns a 500 error on every request, we are down",
+      "expected": {
+        "category": "technical",
+        "priority": "high"
+      },
+      "output": {
+        "category": "technical",
+        "priority": "high"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "The API returns a 500 error on every request, we are down",
+          "output": "{\"category\": \"technical\", \"priority\": \"high\"}",
+          "input_tokens": 96,
+          "output_tokens": 11,
+          "latency_ms": 10.110079998412402,
+          "cost_usd": 0.000015100000000000001,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 10.152937997190747,
+      "cost_usd": 0.000015100000000000001,
+      "input_tokens": 96,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t007",
+      "tags": [
+        "technical"
+      ],
+      "input": "The dashboard is slow when I open the reports page",
+      "expected": {
+        "category": "technical",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "technical",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "The dashboard is slow when I open the reports page",
+          "output": "{\"category\": \"technical\", \"priority\": \"medium\"}",
+          "input_tokens": 94,
+          "output_tokens": 11,
+          "latency_ms": 21.881139000470284,
+          "cost_usd": 0.0000149,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 21.91510400007246,
+      "cost_usd": 0.0000149,
+      "input_tokens": 94,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t008",
+      "tags": [
+        "technical"
+      ],
+      "input": "Just checking: is there a rate limit on the API?",
+      "expected": {
+        "category": "technical",
+        "priority": "low"
+      },
+      "output": {
+        "category": "technical",
+        "priority": "low"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "Just checking: is there a rate limit on the API?",
+          "output": "{\"category\": \"technical\", \"priority\": \"low\"}",
+          "input_tokens": 93,
+          "output_tokens": 11,
+          "latency_ms": 18.647327000508085,
+          "cost_usd": 0.0000148,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 18.690201002755202,
+      "cost_usd": 0.0000148,
+      "input_tokens": 93,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t009",
+      "tags": [
+        "technical"
+      ],
+      "input": "The export button is broken and nothing downloads",
+      "expected": {
+        "category": "technical",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "technical",
+        "priority": "high"
+      },
+      "passed": false,
+      "score": 0.75,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": false,
+          "score": 0.5,
+          "reason": "mismatched fields: ['priority']",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "The export button is broken and nothing downloads",
+          "output": "{\"category\": \"technical\", \"priority\": \"high\"}",
+          "input_tokens": 94,
+          "output_tokens": 11,
+          "latency_ms": 18.302204000065103,
+          "cost_usd": 0.0000149,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 18.36220599943772,
+      "cost_usd": 0.0000149,
+      "input_tokens": 94,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t010",
+      "tags": [
+        "technical"
+      ],
+      "input": "The app crash happens on startup and we cannot work",
+      "expected": {
+        "category": "technical",
+        "priority": "high"
+      },
+      "output": {
+        "category": "technical",
+        "priority": "high"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "The app crash happens on startup and we cannot work",
+          "output": "{\"category\": \"technical\", \"priority\": \"high\"}",
+          "input_tokens": 94,
+          "output_tokens": 11,
+          "latency_ms": 12.283391999517335,
+          "cost_usd": 0.0000149,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 12.314132996834815,
+      "cost_usd": 0.0000149,
+      "input_tokens": 94,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t011",
+      "tags": [
+        "account"
+      ],
+      "input": "I am locked out of my account and cannot log in",
+      "expected": {
+        "category": "account",
+        "priority": "high"
+      },
+      "output": {
+        "category": "account",
+        "priority": "high"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "I am locked out of my account and cannot log in",
+          "output": "{\"category\": \"account\", \"priority\": \"high\"}",
+          "input_tokens": 93,
+          "output_tokens": 10,
+          "latency_ms": 18.746933001239086,
+          "cost_usd": 0.0000143,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 18.77436100039631,
+      "cost_usd": 0.0000143,
+      "input_tokens": 93,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t012",
+      "tags": [
+        "account"
+      ],
+      "input": "How do I change my email address on the profile?",
+      "expected": {
+        "category": "account",
+        "priority": "low"
+      },
+      "output": {
+        "category": "account",
+        "priority": "low"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "How do I change my email address on the profile?",
+          "output": "{\"category\": \"account\", \"priority\": \"low\"}",
+          "input_tokens": 93,
+          "output_tokens": 10,
+          "latency_ms": 13.190068999392679,
+          "cost_usd": 0.0000143,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 13.22436600094079,
+      "cost_usd": 0.0000143,
+      "input_tokens": 93,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t013",
+      "tags": [
+        "account"
+      ],
+      "input": "I forgot my password and the reset link has expired",
+      "expected": {
+        "category": "account",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "account",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "I forgot my password and the reset link has expired",
+          "output": "{\"category\": \"account\", \"priority\": \"medium\"}",
+          "input_tokens": 94,
+          "output_tokens": 11,
+          "latency_ms": 17.154846998892026,
+          "cost_usd": 0.0000149,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 17.209206002007704,
+      "cost_usd": 0.0000149,
+      "input_tokens": 94,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t014",
+      "tags": [
+        "account"
+      ],
+      "input": "Is it possible to enable two-factor login for my team?",
+      "expected": {
+        "category": "account",
+        "priority": "low"
+      },
+      "output": {
+        "category": "account",
+        "priority": "low"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "Is it possible to enable two-factor login for my team?",
+          "output": "{\"category\": \"account\", \"priority\": \"low\"}",
+          "input_tokens": 95,
+          "output_tokens": 10,
+          "latency_ms": 17.338042001938447,
+          "cost_usd": 0.0000145,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 17.38895800008322,
+      "cost_usd": 0.0000145,
+      "input_tokens": 95,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t015",
+      "tags": [
+        "account"
+      ],
+      "input": "My username shows the old company name",
+      "expected": {
+        "category": "account",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "account",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "My username shows the old company name",
+          "output": "{\"category\": \"account\", \"priority\": \"medium\"}",
+          "input_tokens": 91,
+          "output_tokens": 11,
+          "latency_ms": 20.475154000450857,
+          "cost_usd": 0.000014599999999999999,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 20.50845000121626,
+      "cost_usd": 0.000014599999999999999,
+      "input_tokens": 91,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t016",
+      "tags": [
+        "shipping"
+      ],
+      "input": "My package has not arrived and the tracking has not updated in a week",
+      "expected": {
+        "category": "shipping",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "shipping",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "My package has not arrived and the tracking has not updated in a week",
+          "output": "{\"category\": \"shipping\", \"priority\": \"medium\"}",
+          "input_tokens": 99,
+          "output_tokens": 11,
+          "latency_ms": 20.759684000950074,
+          "cost_usd": 0.0000154,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 20.82186199913849,
+      "cost_usd": 0.0000154,
+      "input_tokens": 99,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t017",
+      "tags": [
+        "shipping"
+      ],
+      "input": "The courier marked it delivered but nothing came, urgent please",
+      "expected": {
+        "category": "shipping",
+        "priority": "high"
+      },
+      "output": {
+        "category": "shipping",
+        "priority": "high"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "The courier marked it delivered but nothing came, urgent please",
+          "output": "{\"category\": \"shipping\", \"priority\": \"high\"}",
+          "input_tokens": 97,
+          "output_tokens": 11,
+          "latency_ms": 16.106401999422815,
+          "cost_usd": 0.000015200000000000002,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 16.133574001287343,
+      "cost_usd": 0.000015200000000000002,
+      "input_tokens": 97,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t018",
+      "tags": [
+        "shipping"
+      ],
+      "input": "Curious when the next batch will be shipped",
+      "expected": {
+        "category": "shipping",
+        "priority": "low"
+      },
+      "output": {
+        "category": "shipping",
+        "priority": "low"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "Curious when the next batch will be shipped",
+          "output": "{\"category\": \"shipping\", \"priority\": \"low\"}",
+          "input_tokens": 92,
+          "output_tokens": 10,
+          "latency_ms": 15.866206002101535,
+          "cost_usd": 0.000014200000000000001,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 15.898540001217043,
+      "cost_usd": 0.000014200000000000001,
+      "input_tokens": 92,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t019",
+      "tags": [
+        "shipping"
+      ],
+      "input": "The delivery address label has a typo",
+      "expected": {
+        "category": "shipping",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "shipping",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "The delivery address label has a typo",
+          "output": "{\"category\": \"shipping\", \"priority\": \"medium\"}",
+          "input_tokens": 91,
+          "output_tokens": 11,
+          "latency_ms": 8.171220000804169,
+          "cost_usd": 0.000014599999999999999,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 8.200157000828767,
+      "cost_usd": 0.000014599999999999999,
+      "input_tokens": 91,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t020",
+      "tags": [
+        "shipping"
+      ],
+      "input": "Tracking says my package arrived at the wrong city",
+      "expected": {
+        "category": "shipping",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "shipping",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "Tracking says my package arrived at the wrong city",
+          "output": "{\"category\": \"shipping\", \"priority\": \"medium\"}",
+          "input_tokens": 94,
+          "output_tokens": 11,
+          "latency_ms": 14.423685002839193,
+          "cost_usd": 0.0000149,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 14.473270002781646,
+      "cost_usd": 0.0000149,
+      "input_tokens": 94,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t021",
+      "tags": [
+        "billing"
+      ],
+      "input": "I was charged twice for my invoice this month, please fix this ASAP (customer on the Pro plan)",
+      "expected": {
+        "category": "billing",
+        "priority": "high"
+      },
+      "output": {
+        "category": "billing",
+        "priority": "high"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "I was charged twice for my invoice this month, please fix this ASAP (customer on the Pro plan)",
+          "output": "{\"category\": \"billing\", \"priority\": \"high\"}",
+          "input_tokens": 105,
+          "output_tokens": 10,
+          "latency_ms": 13.068304000626085,
+          "cost_usd": 0.0000155,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 13.099699001031695,
+      "cost_usd": 0.0000155,
+      "input_tokens": 105,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t022",
+      "tags": [
+        "billing"
+      ],
+      "input": "Where can I download last month's invoice? (customer on the Pro plan)",
+      "expected": {
+        "category": "billing",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "billing",
+        "priority": "high"
+      },
+      "passed": false,
+      "score": 0.75,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": false,
+          "score": 0.5,
+          "reason": "mismatched fields: ['priority']",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "Where can I download last month's invoice? (customer on the Pro plan)",
+          "output": "{\"category\": \"billing\", \"priority\": \"high\"}",
+          "input_tokens": 99,
+          "output_tokens": 10,
+          "latency_ms": 9.967713998776162,
+          "cost_usd": 0.0000149,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 9.994230000302196,
+      "cost_usd": 0.0000149,
+      "input_tokens": 99,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t023",
+      "tags": [
+        "billing"
+      ],
+      "input": "Question: can I pay by card instead of bank transfer? (customer on the Pro plan)",
+      "expected": {
+        "category": "billing",
+        "priority": "low"
+      },
+      "output": {
+        "category": "billing",
+        "priority": "low"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "Question: can I pay by card instead of bank transfer? (customer on the Pro plan)",
+          "output": "{\"category\": \"billing\", \"priority\": \"low\"}",
+          "input_tokens": 101,
+          "output_tokens": 10,
+          "latency_ms": 11.452621001808438,
+          "cost_usd": 0.000015100000000000001,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 11.483722999400925,
+      "cost_usd": 0.000015100000000000001,
+      "input_tokens": 101,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t024",
+      "tags": [
+        "billing"
+      ],
+      "input": "My payment failed but the money left my card, I need a refund (customer on the Pro plan)",
+      "expected": {
+        "category": "billing",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "billing",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "My payment failed but the money left my card, I need a refund (customer on the Pro plan)",
+          "output": "{\"category\": \"billing\", \"priority\": \"medium\"}",
+          "input_tokens": 103,
+          "output_tokens": 11,
+          "latency_ms": 20.773678999830736,
+          "cost_usd": 0.0000158,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 20.839099001022987,
+      "cost_usd": 0.0000158,
+      "input_tokens": 103,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t025",
+      "tags": [
+        "billing"
+      ],
+      "input": "I'm wondering how the subscription price changes next year (customer on the Pro plan)",
+      "expected": {
+        "category": "billing",
+        "priority": "low"
+      },
+      "output": {
+        "category": "billing",
+        "priority": "low"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "I'm wondering how the subscription price changes next year (customer on the Pro plan)",
+          "output": "{\"category\": \"billing\", \"priority\": \"low\"}",
+          "input_tokens": 103,
+          "output_tokens": 10,
+          "latency_ms": 9.820514998864383,
+          "cost_usd": 0.0000153,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 9.86328399812919,
+      "cost_usd": 0.0000153,
+      "input_tokens": 103,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t026",
+      "tags": [
+        "technical"
+      ],
+      "input": "The API returns a 500 error on every request, we are down (customer on the Pro plan)",
+      "expected": {
+        "category": "technical",
+        "priority": "high"
+      },
+      "output": {
+        "category": "technical",
+        "priority": "high"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "The API returns a 500 error on every request, we are down (customer on the Pro plan)",
+          "output": "{\"category\": \"technical\", \"priority\": \"high\"}",
+          "input_tokens": 102,
+          "output_tokens": 11,
+          "latency_ms": 20.351082002889598,
+          "cost_usd": 0.000015700000000000002,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 20.409425000252668,
+      "cost_usd": 0.000015700000000000002,
+      "input_tokens": 102,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t027",
+      "tags": [
+        "technical"
+      ],
+      "input": "The dashboard is slow when I open the reports page (customer on the Pro plan)",
+      "expected": {
+        "category": "technical",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "technical",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "The dashboard is slow when I open the reports page (customer on the Pro plan)",
+          "output": "{\"category\": \"technical\", \"priority\": \"medium\"}",
+          "input_tokens": 101,
+          "output_tokens": 11,
+          "latency_ms": 22.277382002357626,
+          "cost_usd": 0.000015600000000000003,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 22.324827001284575,
+      "cost_usd": 0.000015600000000000003,
+      "input_tokens": 101,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t028",
+      "tags": [
+        "technical"
+      ],
+      "input": "Just checking: is there a rate limit on the API? (customer on the Pro plan)",
+      "expected": {
+        "category": "technical",
+        "priority": "low"
+      },
+      "output": {
+        "category": "technical",
+        "priority": "low"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "Just checking: is there a rate limit on the API? (customer on the Pro plan)",
+          "output": "{\"category\": \"technical\", \"priority\": \"low\"}",
+          "input_tokens": 100,
+          "output_tokens": 11,
+          "latency_ms": 10.191651999775786,
+          "cost_usd": 0.0000155,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 10.239371000352548,
+      "cost_usd": 0.0000155,
+      "input_tokens": 100,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t029",
+      "tags": [
+        "technical"
+      ],
+      "input": "The export button is broken and nothing downloads (customer on the Pro plan)",
+      "expected": {
+        "category": "technical",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "technical",
+        "priority": "high"
+      },
+      "passed": false,
+      "score": 0.75,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": false,
+          "score": 0.5,
+          "reason": "mismatched fields: ['priority']",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "The export button is broken and nothing downloads (customer on the Pro plan)",
+          "output": "{\"category\": \"technical\", \"priority\": \"high\"}",
+          "input_tokens": 100,
+          "output_tokens": 11,
+          "latency_ms": 26.840940001420677,
+          "cost_usd": 0.0000155,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 26.882119000219973,
+      "cost_usd": 0.0000155,
+      "input_tokens": 100,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t030",
+      "tags": [
+        "technical"
+      ],
+      "input": "The app crash happens on startup and we cannot work (customer on the Pro plan)",
+      "expected": {
+        "category": "technical",
+        "priority": "high"
+      },
+      "output": {
+        "category": "technical",
+        "priority": "high"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "The app crash happens on startup and we cannot work (customer on the Pro plan)",
+          "output": "{\"category\": \"technical\", \"priority\": \"high\"}",
+          "input_tokens": 101,
+          "output_tokens": 11,
+          "latency_ms": 8.984815998701379,
+          "cost_usd": 0.000015600000000000003,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 9.036272000230383,
+      "cost_usd": 0.000015600000000000003,
+      "input_tokens": 101,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t031",
+      "tags": [
+        "account"
+      ],
+      "input": "I am locked out of my account and cannot log in (customer on the Pro plan)",
+      "expected": {
+        "category": "account",
+        "priority": "high"
+      },
+      "output": {
+        "category": "account",
+        "priority": "high"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "I am locked out of my account and cannot log in (customer on the Pro plan)",
+          "output": "{\"category\": \"account\", \"priority\": \"high\"}",
+          "input_tokens": 100,
+          "output_tokens": 10,
+          "latency_ms": 18.34454699928756,
+          "cost_usd": 0.000015,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 18.41196199893602,
+      "cost_usd": 0.000015,
+      "input_tokens": 100,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t032",
+      "tags": [
+        "account"
+      ],
+      "input": "How do I change my email address on the profile? (customer on the Pro plan)",
+      "expected": {
+        "category": "account",
+        "priority": "low"
+      },
+      "output": {
+        "category": "account",
+        "priority": "low"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "How do I change my email address on the profile? (customer on the Pro plan)",
+          "output": "{\"category\": \"account\", \"priority\": \"low\"}",
+          "input_tokens": 100,
+          "output_tokens": 10,
+          "latency_ms": 18.537572999775875,
+          "cost_usd": 0.000015,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 18.608259000757243,
+      "cost_usd": 0.000015,
+      "input_tokens": 100,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t033",
+      "tags": [
+        "account"
+      ],
+      "input": "I forgot my password and the reset link has expired (customer on the Pro plan)",
+      "expected": {
+        "category": "account",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "account",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "I forgot my password and the reset link has expired (customer on the Pro plan)",
+          "output": "{\"category\": \"account\", \"priority\": \"medium\"}",
+          "input_tokens": 101,
+          "output_tokens": 11,
+          "latency_ms": 18.00445899789338,
+          "cost_usd": 0.000015600000000000003,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 18.04582600016147,
+      "cost_usd": 0.000015600000000000003,
+      "input_tokens": 101,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t034",
+      "tags": [
+        "account"
+      ],
+      "input": "Is it possible to enable two-factor login for my team? (customer on the Pro plan)",
+      "expected": {
+        "category": "account",
+        "priority": "low"
+      },
+      "output": {
+        "category": "account",
+        "priority": "low"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "Is it possible to enable two-factor login for my team? (customer on the Pro plan)",
+          "output": "{\"category\": \"account\", \"priority\": \"low\"}",
+          "input_tokens": 102,
+          "output_tokens": 10,
+          "latency_ms": 18.462940999597777,
+          "cost_usd": 0.000015200000000000002,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 18.527738000557292,
+      "cost_usd": 0.000015200000000000002,
+      "input_tokens": 102,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t035",
+      "tags": [
+        "account"
+      ],
+      "input": "My username shows the old company name (customer on the Pro plan)",
+      "expected": {
+        "category": "account",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "account",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "My username shows the old company name (customer on the Pro plan)",
+          "output": "{\"category\": \"account\", \"priority\": \"medium\"}",
+          "input_tokens": 98,
+          "output_tokens": 11,
+          "latency_ms": 19.707391002157237,
+          "cost_usd": 0.0000153,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 19.7418360003212,
+      "cost_usd": 0.0000153,
+      "input_tokens": 98,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t036",
+      "tags": [
+        "shipping"
+      ],
+      "input": "My package has not arrived and the tracking has not updated in a week (customer on the Pro plan)",
+      "expected": {
+        "category": "shipping",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "shipping",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "My package has not arrived and the tracking has not updated in a week (customer on the Pro plan)",
+          "output": "{\"category\": \"shipping\", \"priority\": \"medium\"}",
+          "input_tokens": 105,
+          "output_tokens": 11,
+          "latency_ms": 14.746556000318378,
+          "cost_usd": 0.000016,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 14.81799800239969,
+      "cost_usd": 0.000016,
+      "input_tokens": 105,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t037",
+      "tags": [
+        "shipping"
+      ],
+      "input": "The courier marked it delivered but nothing came, urgent please (customer on the Pro plan)",
+      "expected": {
+        "category": "shipping",
+        "priority": "high"
+      },
+      "output": {
+        "category": "shipping",
+        "priority": "high"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "The courier marked it delivered but nothing came, urgent please (customer on the Pro plan)",
+          "output": "{\"category\": \"shipping\", \"priority\": \"high\"}",
+          "input_tokens": 104,
+          "output_tokens": 11,
+          "latency_ms": 14.955383001506561,
+          "cost_usd": 0.0000159,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 15.00588099952438,
+      "cost_usd": 0.0000159,
+      "input_tokens": 104,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t038",
+      "tags": [
+        "shipping"
+      ],
+      "input": "Curious when the next batch will be shipped (customer on the Pro plan)",
+      "expected": {
+        "category": "shipping",
+        "priority": "low"
+      },
+      "output": {
+        "category": "shipping",
+        "priority": "low"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "Curious when the next batch will be shipped (customer on the Pro plan)",
+          "output": "{\"category\": \"shipping\", \"priority\": \"low\"}",
+          "input_tokens": 99,
+          "output_tokens": 10,
+          "latency_ms": 16.996304999338463,
+          "cost_usd": 0.0000149,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 17.03859199915314,
+      "cost_usd": 0.0000149,
+      "input_tokens": 99,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t039",
+      "tags": [
+        "shipping"
+      ],
+      "input": "The delivery address label has a typo (customer on the Pro plan)",
+      "expected": {
+        "category": "shipping",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "shipping",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "The delivery address label has a typo (customer on the Pro plan)",
+          "output": "{\"category\": \"shipping\", \"priority\": \"medium\"}",
+          "input_tokens": 97,
+          "output_tokens": 11,
+          "latency_ms": 12.28012600040529,
+          "cost_usd": 0.000015200000000000002,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 12.316868000198156,
+      "cost_usd": 0.000015200000000000002,
+      "input_tokens": 97,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t040",
+      "tags": [
+        "shipping"
+      ],
+      "input": "Tracking says my package arrived at the wrong city (customer on the Pro plan)",
+      "expected": {
+        "category": "shipping",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "shipping",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "Tracking says my package arrived at the wrong city (customer on the Pro plan)",
+          "output": "{\"category\": \"shipping\", \"priority\": \"medium\"}",
+          "input_tokens": 101,
+          "output_tokens": 11,
+          "latency_ms": 18.173600001318846,
+          "cost_usd": 0.000015600000000000003,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 18.21053700041375,
+      "cost_usd": 0.000015600000000000003,
+      "input_tokens": 101,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t041",
+      "tags": [
+        "billing"
+      ],
+      "input": "I was charged twice for my invoice this month, please fix this ASAP",
+      "expected": {
+        "category": "billing",
+        "priority": "high"
+      },
+      "output": {
+        "category": "billing",
+        "priority": "high"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "I was charged twice for my invoice this month, please fix this ASAP",
+          "output": "{\"category\": \"billing\", \"priority\": \"high\"}",
+          "input_tokens": 98,
+          "output_tokens": 10,
+          "latency_ms": 19.78939200125751,
+          "cost_usd": 0.0000148,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 19.8261339974124,
+      "cost_usd": 0.0000148,
+      "input_tokens": 98,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t042",
+      "tags": [
+        "billing"
+      ],
+      "input": "Where can I download last month's invoice?",
+      "expected": {
+        "category": "billing",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "billing",
+        "priority": "high"
+      },
+      "passed": false,
+      "score": 0.75,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": false,
+          "score": 0.5,
+          "reason": "mismatched fields: ['priority']",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "Where can I download last month's invoice?",
+          "output": "{\"category\": \"billing\", \"priority\": \"high\"}",
+          "input_tokens": 92,
+          "output_tokens": 10,
+          "latency_ms": 20.490454000537284,
+          "cost_usd": 0.000014200000000000001,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 20.521968999673845,
+      "cost_usd": 0.000014200000000000001,
+      "input_tokens": 92,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t043",
+      "tags": [
+        "billing"
+      ],
+      "input": "Question: can I pay by card instead of bank transfer?",
+      "expected": {
+        "category": "billing",
+        "priority": "low"
+      },
+      "output": {
+        "category": "billing",
+        "priority": "low"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "Question: can I pay by card instead of bank transfer?",
+          "output": "{\"category\": \"billing\", \"priority\": \"low\"}",
+          "input_tokens": 95,
+          "output_tokens": 10,
+          "latency_ms": 20.211346996802604,
+          "cost_usd": 0.0000145,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 20.24493600038113,
+      "cost_usd": 0.0000145,
+      "input_tokens": 95,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t044",
+      "tags": [
+        "billing"
+      ],
+      "input": "My payment failed but the money left my card, I need a refund",
+      "expected": {
+        "category": "billing",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "billing",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "My payment failed but the money left my card, I need a refund",
+          "output": "{\"category\": \"billing\", \"priority\": \"medium\"}",
+          "input_tokens": 97,
+          "output_tokens": 11,
+          "latency_ms": 15.997539001546102,
+          "cost_usd": 0.000015200000000000002,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 16.02998700036551,
+      "cost_usd": 0.000015200000000000002,
+      "input_tokens": 97,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t045",
+      "tags": [
+        "billing"
+      ],
+      "input": "I'm wondering how the subscription price changes next year",
+      "expected": {
+        "category": "billing",
+        "priority": "low"
+      },
+      "output": {
+        "category": "billing",
+        "priority": "low"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "I'm wondering how the subscription price changes next year",
+          "output": "{\"category\": \"billing\", \"priority\": \"low\"}",
+          "input_tokens": 96,
+          "output_tokens": 10,
+          "latency_ms": 9.131793998676585,
+          "cost_usd": 0.0000146,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 9.170143999654101,
+      "cost_usd": 0.0000146,
+      "input_tokens": 96,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t046",
+      "tags": [
+        "technical"
+      ],
+      "input": "The API returns a 500 error on every request, we are down",
+      "expected": {
+        "category": "technical",
+        "priority": "high"
+      },
+      "output": {
+        "category": "technical",
+        "priority": "high"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "The API returns a 500 error on every request, we are down",
+          "output": "{\"category\": \"technical\", \"priority\": \"high\"}",
+          "input_tokens": 96,
+          "output_tokens": 11,
+          "latency_ms": 15.37603799806675,
+          "cost_usd": 0.000015100000000000001,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 15.412950000609271,
+      "cost_usd": 0.000015100000000000001,
+      "input_tokens": 96,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t047",
+      "tags": [
+        "technical"
+      ],
+      "input": "The dashboard is slow when I open the reports page",
+      "expected": {
+        "category": "technical",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "technical",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "The dashboard is slow when I open the reports page",
+          "output": "{\"category\": \"technical\", \"priority\": \"medium\"}",
+          "input_tokens": 94,
+          "output_tokens": 11,
+          "latency_ms": 19.15844999894034,
+          "cost_usd": 0.0000149,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 19.208780999178998,
+      "cost_usd": 0.0000149,
+      "input_tokens": 94,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t048",
+      "tags": [
+        "technical"
+      ],
+      "input": "Just checking: is there a rate limit on the API?",
+      "expected": {
+        "category": "technical",
+        "priority": "low"
+      },
+      "output": {
+        "category": "technical",
+        "priority": "low"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "Just checking: is there a rate limit on the API?",
+          "output": "{\"category\": \"technical\", \"priority\": \"low\"}",
+          "input_tokens": 93,
+          "output_tokens": 11,
+          "latency_ms": 19.835144998069154,
+          "cost_usd": 0.0000148,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 19.878716000675922,
+      "cost_usd": 0.0000148,
+      "input_tokens": 93,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t049",
+      "tags": [
+        "technical"
+      ],
+      "input": "The export button is broken and nothing downloads",
+      "expected": {
+        "category": "technical",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "technical",
+        "priority": "high"
+      },
+      "passed": false,
+      "score": 0.75,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": false,
+          "score": 0.5,
+          "reason": "mismatched fields: ['priority']",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "The export button is broken and nothing downloads",
+          "output": "{\"category\": \"technical\", \"priority\": \"high\"}",
+          "input_tokens": 94,
+          "output_tokens": 11,
+          "latency_ms": 18.83356200050912,
+          "cost_usd": 0.0000149,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 18.884445998992305,
+      "cost_usd": 0.0000149,
+      "input_tokens": 94,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t050",
+      "tags": [
+        "technical"
+      ],
+      "input": "The app crash happens on startup and we cannot work",
+      "expected": {
+        "category": "technical",
+        "priority": "high"
+      },
+      "output": {
+        "category": "technical",
+        "priority": "high"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "The app crash happens on startup and we cannot work",
+          "output": "{\"category\": \"technical\", \"priority\": \"high\"}",
+          "input_tokens": 94,
+          "output_tokens": 11,
+          "latency_ms": 12.513896999735152,
+          "cost_usd": 0.0000149,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 12.546295998618007,
+      "cost_usd": 0.0000149,
+      "input_tokens": 94,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t051",
+      "tags": [
+        "account"
+      ],
+      "input": "I am locked out of my account and cannot log in",
+      "expected": {
+        "category": "account",
+        "priority": "high"
+      },
+      "output": {
+        "category": "account",
+        "priority": "high"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "I am locked out of my account and cannot log in",
+          "output": "{\"category\": \"account\", \"priority\": \"high\"}",
+          "input_tokens": 93,
+          "output_tokens": 10,
+          "latency_ms": 18.159471997932997,
+          "cost_usd": 0.0000143,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 18.19185300337267,
+      "cost_usd": 0.0000143,
+      "input_tokens": 93,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t052",
+      "tags": [
+        "account"
+      ],
+      "input": "How do I change my email address on the profile?",
+      "expected": {
+        "category": "account",
+        "priority": "low"
+      },
+      "output": {
+        "category": "account",
+        "priority": "low"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "How do I change my email address on the profile?",
+          "output": "{\"category\": \"account\", \"priority\": \"low\"}",
+          "input_tokens": 93,
+          "output_tokens": 10,
+          "latency_ms": 11.128191003081156,
+          "cost_usd": 0.0000143,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 11.153070998261683,
+      "cost_usd": 0.0000143,
+      "input_tokens": 93,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t053",
+      "tags": [
+        "account"
+      ],
+      "input": "I forgot my password and the reset link has expired",
+      "expected": {
+        "category": "account",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "account",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "I forgot my password and the reset link has expired",
+          "output": "{\"category\": \"account\", \"priority\": \"medium\"}",
+          "input_tokens": 94,
+          "output_tokens": 11,
+          "latency_ms": 17.15735000107088,
+          "cost_usd": 0.0000149,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 17.18706500105327,
+      "cost_usd": 0.0000149,
+      "input_tokens": 94,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t054",
+      "tags": [
+        "account"
+      ],
+      "input": "Is it possible to enable two-factor login for my team?",
+      "expected": {
+        "category": "account",
+        "priority": "low"
+      },
+      "output": {
+        "category": "account",
+        "priority": "low"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "Is it possible to enable two-factor login for my team?",
+          "output": "{\"category\": \"account\", \"priority\": \"low\"}",
+          "input_tokens": 95,
+          "output_tokens": 10,
+          "latency_ms": 17.115349997766316,
+          "cost_usd": 0.0000145,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 17.14887600246584,
+      "cost_usd": 0.0000145,
+      "input_tokens": 95,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t055",
+      "tags": [
+        "account"
+      ],
+      "input": "My username shows the old company name",
+      "expected": {
+        "category": "account",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "account",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "My username shows the old company name",
+          "output": "{\"category\": \"account\", \"priority\": \"medium\"}",
+          "input_tokens": 91,
+          "output_tokens": 11,
+          "latency_ms": 19.19371899930411,
+          "cost_usd": 0.000014599999999999999,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 19.232938000641298,
+      "cost_usd": 0.000014599999999999999,
+      "input_tokens": 91,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t056",
+      "tags": [
+        "shipping"
+      ],
+      "input": "My package has not arrived and the tracking has not updated in a week",
+      "expected": {
+        "category": "shipping",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "shipping",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "My package has not arrived and the tracking has not updated in a week",
+          "output": "{\"category\": \"shipping\", \"priority\": \"medium\"}",
+          "input_tokens": 99,
+          "output_tokens": 11,
+          "latency_ms": 28.96470199993928,
+          "cost_usd": 0.0000154,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 29.01073099928908,
+      "cost_usd": 0.0000154,
+      "input_tokens": 99,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t057",
+      "tags": [
+        "shipping"
+      ],
+      "input": "The courier marked it delivered but nothing came, urgent please",
+      "expected": {
+        "category": "shipping",
+        "priority": "high"
+      },
+      "output": {
+        "category": "shipping",
+        "priority": "high"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "The courier marked it delivered but nothing came, urgent please",
+          "output": "{\"category\": \"shipping\", \"priority\": \"high\"}",
+          "input_tokens": 97,
+          "output_tokens": 11,
+          "latency_ms": 18.332142997678602,
+          "cost_usd": 0.000015200000000000002,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 18.372252998233307,
+      "cost_usd": 0.000015200000000000002,
+      "input_tokens": 97,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t058",
+      "tags": [
+        "shipping"
+      ],
+      "input": "Curious when the next batch will be shipped",
+      "expected": {
+        "category": "shipping",
+        "priority": "low"
+      },
+      "output": {
+        "category": "shipping",
+        "priority": "low"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "Curious when the next batch will be shipped",
+          "output": "{\"category\": \"shipping\", \"priority\": \"low\"}",
+          "input_tokens": 92,
+          "output_tokens": 10,
+          "latency_ms": 19.09207200151286,
+          "cost_usd": 0.000014200000000000001,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 19.138346000545425,
+      "cost_usd": 0.000014200000000000001,
+      "input_tokens": 92,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t059",
+      "tags": [
+        "shipping"
+      ],
+      "input": "The delivery address label has a typo",
+      "expected": {
+        "category": "shipping",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "shipping",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "The delivery address label has a typo",
+          "output": "{\"category\": \"shipping\", \"priority\": \"medium\"}",
+          "input_tokens": 91,
+          "output_tokens": 11,
+          "latency_ms": 8.12135499654687,
+          "cost_usd": 0.000014599999999999999,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 8.166649000486359,
+      "cost_usd": 0.000014599999999999999,
+      "input_tokens": 91,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t060",
+      "tags": [
+        "shipping"
+      ],
+      "input": "Tracking says my package arrived at the wrong city",
+      "expected": {
+        "category": "shipping",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "shipping",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "Tracking says my package arrived at the wrong city",
+          "output": "{\"category\": \"shipping\", \"priority\": \"medium\"}",
+          "input_tokens": 94,
+          "output_tokens": 11,
+          "latency_ms": 23.73020500090206,
+          "cost_usd": 0.0000149,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 23.77614299984998,
+      "cost_usd": 0.0000149,
+      "input_tokens": 94,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t061",
+      "tags": [
+        "billing"
+      ],
+      "input": "I was charged twice for my invoice this month, please fix this ASAP (customer on the Pro plan)",
+      "expected": {
+        "category": "billing",
+        "priority": "high"
+      },
+      "output": {
+        "category": "billing",
+        "priority": "high"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "I was charged twice for my invoice this month, please fix this ASAP (customer on the Pro plan)",
+          "output": "{\"category\": \"billing\", \"priority\": \"high\"}",
+          "input_tokens": 105,
+          "output_tokens": 10,
+          "latency_ms": 15.039373000035994,
+          "cost_usd": 0.0000155,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 15.07422999929986,
+      "cost_usd": 0.0000155,
+      "input_tokens": 105,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t062",
+      "tags": [
+        "billing"
+      ],
+      "input": "Where can I download last month's invoice? (customer on the Pro plan)",
+      "expected": {
+        "category": "billing",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "billing",
+        "priority": "high"
+      },
+      "passed": false,
+      "score": 0.75,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": false,
+          "score": 0.5,
+          "reason": "mismatched fields: ['priority']",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "Where can I download last month's invoice? (customer on the Pro plan)",
+          "output": "{\"category\": \"billing\", \"priority\": \"high\"}",
+          "input_tokens": 99,
+          "output_tokens": 10,
+          "latency_ms": 15.540191998297814,
+          "cost_usd": 0.0000149,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 15.587442998366896,
+      "cost_usd": 0.0000149,
+      "input_tokens": 99,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t063",
+      "tags": [
+        "billing"
+      ],
+      "input": "Question: can I pay by card instead of bank transfer? (customer on the Pro plan)",
+      "expected": {
+        "category": "billing",
+        "priority": "low"
+      },
+      "output": {
+        "category": "billing",
+        "priority": "low"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "Question: can I pay by card instead of bank transfer? (customer on the Pro plan)",
+          "output": "{\"category\": \"billing\", \"priority\": \"low\"}",
+          "input_tokens": 101,
+          "output_tokens": 10,
+          "latency_ms": 18.238226999528706,
+          "cost_usd": 0.000015100000000000001,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 18.28879100139602,
+      "cost_usd": 0.000015100000000000001,
+      "input_tokens": 101,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t064",
+      "tags": [
+        "billing"
+      ],
+      "input": "My payment failed but the money left my card, I need a refund (customer on the Pro plan)",
+      "expected": {
+        "category": "billing",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "billing",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "My payment failed but the money left my card, I need a refund (customer on the Pro plan)",
+          "output": "{\"category\": \"billing\", \"priority\": \"medium\"}",
+          "input_tokens": 103,
+          "output_tokens": 11,
+          "latency_ms": 18.699324999033706,
+          "cost_usd": 0.0000158,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 18.743253000138793,
+      "cost_usd": 0.0000158,
+      "input_tokens": 103,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t065",
+      "tags": [
+        "billing"
+      ],
+      "input": "I'm wondering how the subscription price changes next year (customer on the Pro plan)",
+      "expected": {
+        "category": "billing",
+        "priority": "low"
+      },
+      "output": {
+        "category": "billing",
+        "priority": "low"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "I'm wondering how the subscription price changes next year (customer on the Pro plan)",
+          "output": "{\"category\": \"billing\", \"priority\": \"low\"}",
+          "input_tokens": 103,
+          "output_tokens": 10,
+          "latency_ms": 14.688312003272586,
+          "cost_usd": 0.0000153,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 14.72897900021053,
+      "cost_usd": 0.0000153,
+      "input_tokens": 103,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t066",
+      "tags": [
+        "technical"
+      ],
+      "input": "The API returns a 500 error on every request, we are down (customer on the Pro plan)",
+      "expected": {
+        "category": "technical",
+        "priority": "high"
+      },
+      "output": {
+        "category": "technical",
+        "priority": "high"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "The API returns a 500 error on every request, we are down (customer on the Pro plan)",
+          "output": "{\"category\": \"technical\", \"priority\": \"high\"}",
+          "input_tokens": 102,
+          "output_tokens": 11,
+          "latency_ms": 17.75672000076156,
+          "cost_usd": 0.000015700000000000002,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 17.7927520016965,
+      "cost_usd": 0.000015700000000000002,
+      "input_tokens": 102,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t067",
+      "tags": [
+        "technical"
+      ],
+      "input": "The dashboard is slow when I open the reports page (customer on the Pro plan)",
+      "expected": {
+        "category": "technical",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "technical",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "The dashboard is slow when I open the reports page (customer on the Pro plan)",
+          "output": "{\"category\": \"technical\", \"priority\": \"medium\"}",
+          "input_tokens": 101,
+          "output_tokens": 11,
+          "latency_ms": 18.761553001240827,
+          "cost_usd": 0.000015600000000000003,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 18.821969999407884,
+      "cost_usd": 0.000015600000000000003,
+      "input_tokens": 101,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t068",
+      "tags": [
+        "technical"
+      ],
+      "input": "Just checking: is there a rate limit on the API? (customer on the Pro plan)",
+      "expected": {
+        "category": "technical",
+        "priority": "low"
+      },
+      "output": {
+        "category": "technical",
+        "priority": "low"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "Just checking: is there a rate limit on the API? (customer on the Pro plan)",
+          "output": "{\"category\": \"technical\", \"priority\": \"low\"}",
+          "input_tokens": 100,
+          "output_tokens": 11,
+          "latency_ms": 11.154829000588506,
+          "cost_usd": 0.0000155,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 11.18618699911167,
+      "cost_usd": 0.0000155,
+      "input_tokens": 100,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t069",
+      "tags": [
+        "technical"
+      ],
+      "input": "The export button is broken and nothing downloads (customer on the Pro plan)",
+      "expected": {
+        "category": "technical",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "technical",
+        "priority": "high"
+      },
+      "passed": false,
+      "score": 0.75,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": false,
+          "score": 0.5,
+          "reason": "mismatched fields: ['priority']",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "The export button is broken and nothing downloads (customer on the Pro plan)",
+          "output": "{\"category\": \"technical\", \"priority\": \"high\"}",
+          "input_tokens": 100,
+          "output_tokens": 11,
+          "latency_ms": 19.2685519978113,
+          "cost_usd": 0.0000155,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 19.299562001833692,
+      "cost_usd": 0.0000155,
+      "input_tokens": 100,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t070",
+      "tags": [
+        "technical"
+      ],
+      "input": "The app crash happens on startup and we cannot work (customer on the Pro plan)",
+      "expected": {
+        "category": "technical",
+        "priority": "high"
+      },
+      "output": {
+        "category": "technical",
+        "priority": "high"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "The app crash happens on startup and we cannot work (customer on the Pro plan)",
+          "output": "{\"category\": \"technical\", \"priority\": \"high\"}",
+          "input_tokens": 101,
+          "output_tokens": 11,
+          "latency_ms": 9.560251000948483,
+          "cost_usd": 0.000015600000000000003,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 9.609475997422123,
+      "cost_usd": 0.000015600000000000003,
+      "input_tokens": 101,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t071",
+      "tags": [
+        "account"
+      ],
+      "input": "I am locked out of my account and cannot log in (customer on the Pro plan)",
+      "expected": {
+        "category": "account",
+        "priority": "high"
+      },
+      "output": {
+        "category": "account",
+        "priority": "high"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "I am locked out of my account and cannot log in (customer on the Pro plan)",
+          "output": "{\"category\": \"account\", \"priority\": \"high\"}",
+          "input_tokens": 100,
+          "output_tokens": 10,
+          "latency_ms": 15.13172500199289,
+          "cost_usd": 0.000015,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 15.170839000347769,
+      "cost_usd": 0.000015,
+      "input_tokens": 100,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t072",
+      "tags": [
+        "account"
+      ],
+      "input": "How do I change my email address on the profile? (customer on the Pro plan)",
+      "expected": {
+        "category": "account",
+        "priority": "low"
+      },
+      "output": {
+        "category": "account",
+        "priority": "low"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "How do I change my email address on the profile? (customer on the Pro plan)",
+          "output": "{\"category\": \"account\", \"priority\": \"low\"}",
+          "input_tokens": 100,
+          "output_tokens": 10,
+          "latency_ms": 15.15853399905609,
+          "cost_usd": 0.000015,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 15.191974001936615,
+      "cost_usd": 0.000015,
+      "input_tokens": 100,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t073",
+      "tags": [
+        "account"
+      ],
+      "input": "I forgot my password and the reset link has expired (customer on the Pro plan)",
+      "expected": {
+        "category": "account",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "account",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "I forgot my password and the reset link has expired (customer on the Pro plan)",
+          "output": "{\"category\": \"account\", \"priority\": \"medium\"}",
+          "input_tokens": 101,
+          "output_tokens": 11,
+          "latency_ms": 16.155807999894023,
+          "cost_usd": 0.000015600000000000003,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 16.208984001423232,
+      "cost_usd": 0.000015600000000000003,
+      "input_tokens": 101,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t074",
+      "tags": [
+        "account"
+      ],
+      "input": "Is it possible to enable two-factor login for my team? (customer on the Pro plan)",
+      "expected": {
+        "category": "account",
+        "priority": "low"
+      },
+      "output": {
+        "category": "account",
+        "priority": "low"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "Is it possible to enable two-factor login for my team? (customer on the Pro plan)",
+          "output": "{\"category\": \"account\", \"priority\": \"low\"}",
+          "input_tokens": 102,
+          "output_tokens": 10,
+          "latency_ms": 17.660527002590243,
+          "cost_usd": 0.000015200000000000002,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 17.688020998321008,
+      "cost_usd": 0.000015200000000000002,
+      "input_tokens": 102,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t075",
+      "tags": [
+        "account"
+      ],
+      "input": "My username shows the old company name (customer on the Pro plan)",
+      "expected": {
+        "category": "account",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "account",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "My username shows the old company name (customer on the Pro plan)",
+          "output": "{\"category\": \"account\", \"priority\": \"medium\"}",
+          "input_tokens": 98,
+          "output_tokens": 11,
+          "latency_ms": 19.2510319975554,
+          "cost_usd": 0.0000153,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 19.31771499948809,
+      "cost_usd": 0.0000153,
+      "input_tokens": 98,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t076",
+      "tags": [
+        "shipping"
+      ],
+      "input": "My package has not arrived and the tracking has not updated in a week (customer on the Pro plan)",
+      "expected": {
+        "category": "shipping",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "shipping",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "My package has not arrived and the tracking has not updated in a week (customer on the Pro plan)",
+          "output": "{\"category\": \"shipping\", \"priority\": \"medium\"}",
+          "input_tokens": 105,
+          "output_tokens": 11,
+          "latency_ms": 12.717022000288125,
+          "cost_usd": 0.000016,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 12.746155996865127,
+      "cost_usd": 0.000016,
+      "input_tokens": 105,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t077",
+      "tags": [
+        "shipping"
+      ],
+      "input": "The courier marked it delivered but nothing came, urgent please (customer on the Pro plan)",
+      "expected": {
+        "category": "shipping",
+        "priority": "high"
+      },
+      "output": {
+        "category": "shipping",
+        "priority": "high"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "The courier marked it delivered but nothing came, urgent please (customer on the Pro plan)",
+          "output": "{\"category\": \"shipping\", \"priority\": \"high\"}",
+          "input_tokens": 104,
+          "output_tokens": 11,
+          "latency_ms": 14.139332000922877,
+          "cost_usd": 0.0000159,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 14.182769999024458,
+      "cost_usd": 0.0000159,
+      "input_tokens": 104,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t078",
+      "tags": [
+        "shipping"
+      ],
+      "input": "Curious when the next batch will be shipped (customer on the Pro plan)",
+      "expected": {
+        "category": "shipping",
+        "priority": "low"
+      },
+      "output": {
+        "category": "shipping",
+        "priority": "low"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "Curious when the next batch will be shipped (customer on the Pro plan)",
+          "output": "{\"category\": \"shipping\", \"priority\": \"low\"}",
+          "input_tokens": 99,
+          "output_tokens": 10,
+          "latency_ms": 15.237616000376875,
+          "cost_usd": 0.0000149,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 15.275062000000617,
+      "cost_usd": 0.0000149,
+      "input_tokens": 99,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t079",
+      "tags": [
+        "shipping"
+      ],
+      "input": "The delivery address label has a typo (customer on the Pro plan)",
+      "expected": {
+        "category": "shipping",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "shipping",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "The delivery address label has a typo (customer on the Pro plan)",
+          "output": "{\"category\": \"shipping\", \"priority\": \"medium\"}",
+          "input_tokens": 97,
+          "output_tokens": 11,
+          "latency_ms": 11.127392001071712,
+          "cost_usd": 0.000015200000000000002,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 11.164682000526227,
+      "cost_usd": 0.000015200000000000002,
+      "input_tokens": 97,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t080",
+      "tags": [
+        "shipping"
+      ],
+      "input": "Tracking says my package arrived at the wrong city (customer on the Pro plan)",
+      "expected": {
+        "category": "shipping",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "shipping",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "Tracking says my package arrived at the wrong city (customer on the Pro plan)",
+          "output": "{\"category\": \"shipping\", \"priority\": \"medium\"}",
+          "input_tokens": 101,
+          "output_tokens": 11,
+          "latency_ms": 18.645346000994323,
+          "cost_usd": 0.000015600000000000003,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 18.691512999794213,
+      "cost_usd": 0.000015600000000000003,
+      "input_tokens": 101,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t081",
+      "tags": [
+        "billing"
+      ],
+      "input": "I was charged twice for my invoice this month, please fix this ASAP",
+      "expected": {
+        "category": "billing",
+        "priority": "high"
+      },
+      "output": {
+        "category": "billing",
+        "priority": "high"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "I was charged twice for my invoice this month, please fix this ASAP",
+          "output": "{\"category\": \"billing\", \"priority\": \"high\"}",
+          "input_tokens": 98,
+          "output_tokens": 10,
+          "latency_ms": 17.606952002097387,
+          "cost_usd": 0.0000148,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 17.663620001258096,
+      "cost_usd": 0.0000148,
+      "input_tokens": 98,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t082",
+      "tags": [
+        "billing"
+      ],
+      "input": "Where can I download last month's invoice?",
+      "expected": {
+        "category": "billing",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "billing",
+        "priority": "high"
+      },
+      "passed": false,
+      "score": 0.75,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": false,
+          "score": 0.5,
+          "reason": "mismatched fields: ['priority']",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "Where can I download last month's invoice?",
+          "output": "{\"category\": \"billing\", \"priority\": \"high\"}",
+          "input_tokens": 92,
+          "output_tokens": 10,
+          "latency_ms": 19.292611999844667,
+          "cost_usd": 0.000014200000000000001,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 19.332690000737784,
+      "cost_usd": 0.000014200000000000001,
+      "input_tokens": 92,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t083",
+      "tags": [
+        "billing"
+      ],
+      "input": "Question: can I pay by card instead of bank transfer?",
+      "expected": {
+        "category": "billing",
+        "priority": "low"
+      },
+      "output": {
+        "category": "billing",
+        "priority": "low"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "Question: can I pay by card instead of bank transfer?",
+          "output": "{\"category\": \"billing\", \"priority\": \"low\"}",
+          "input_tokens": 95,
+          "output_tokens": 10,
+          "latency_ms": 20.67741100108833,
+          "cost_usd": 0.0000145,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 20.723192999867024,
+      "cost_usd": 0.0000145,
+      "input_tokens": 95,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t084",
+      "tags": [
+        "billing"
+      ],
+      "input": "My payment failed but the money left my card, I need a refund",
+      "expected": {
+        "category": "billing",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "billing",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "My payment failed but the money left my card, I need a refund",
+          "output": "{\"category\": \"billing\", \"priority\": \"medium\"}",
+          "input_tokens": 97,
+          "output_tokens": 11,
+          "latency_ms": 14.509990000078687,
+          "cost_usd": 0.000015200000000000002,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 14.55329600139521,
+      "cost_usd": 0.000015200000000000002,
+      "input_tokens": 97,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t085",
+      "tags": [
+        "billing"
+      ],
+      "input": "I'm wondering how the subscription price changes next year",
+      "expected": {
+        "category": "billing",
+        "priority": "low"
+      },
+      "output": {
+        "category": "billing",
+        "priority": "low"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "I'm wondering how the subscription price changes next year",
+          "output": "{\"category\": \"billing\", \"priority\": \"low\"}",
+          "input_tokens": 96,
+          "output_tokens": 10,
+          "latency_ms": 8.120655998936854,
+          "cost_usd": 0.0000146,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 8.157091000612127,
+      "cost_usd": 0.0000146,
+      "input_tokens": 96,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t086",
+      "tags": [
+        "technical"
+      ],
+      "input": "The API returns a 500 error on every request, we are down",
+      "expected": {
+        "category": "technical",
+        "priority": "high"
+      },
+      "output": {
+        "category": "technical",
+        "priority": "high"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "The API returns a 500 error on every request, we are down",
+          "output": "{\"category\": \"technical\", \"priority\": \"high\"}",
+          "input_tokens": 96,
+          "output_tokens": 11,
+          "latency_ms": 13.615150000987342,
+          "cost_usd": 0.000015100000000000001,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 13.643890000821557,
+      "cost_usd": 0.000015100000000000001,
+      "input_tokens": 96,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t087",
+      "tags": [
+        "technical"
+      ],
+      "input": "The dashboard is slow when I open the reports page",
+      "expected": {
+        "category": "technical",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "technical",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "The dashboard is slow when I open the reports page",
+          "output": "{\"category\": \"technical\", \"priority\": \"medium\"}",
+          "input_tokens": 94,
+          "output_tokens": 11,
+          "latency_ms": 19.135828002617927,
+          "cost_usd": 0.0000149,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 19.181716997991316,
+      "cost_usd": 0.0000149,
+      "input_tokens": 94,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t088",
+      "tags": [
+        "technical"
+      ],
+      "input": "Just checking: is there a rate limit on the API?",
+      "expected": {
+        "category": "technical",
+        "priority": "low"
+      },
+      "output": {
+        "category": "technical",
+        "priority": "low"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "Just checking: is there a rate limit on the API?",
+          "output": "{\"category\": \"technical\", \"priority\": \"low\"}",
+          "input_tokens": 93,
+          "output_tokens": 11,
+          "latency_ms": 18.62167799845338,
+          "cost_usd": 0.0000148,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 18.653237999387784,
+      "cost_usd": 0.0000148,
+      "input_tokens": 93,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t089",
+      "tags": [
+        "technical"
+      ],
+      "input": "The export button is broken and nothing downloads",
+      "expected": {
+        "category": "technical",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "technical",
+        "priority": "high"
+      },
+      "passed": false,
+      "score": 0.75,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": false,
+          "score": 0.5,
+          "reason": "mismatched fields: ['priority']",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "The export button is broken and nothing downloads",
+          "output": "{\"category\": \"technical\", \"priority\": \"high\"}",
+          "input_tokens": 94,
+          "output_tokens": 11,
+          "latency_ms": 18.96031599972048,
+          "cost_usd": 0.0000149,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 19.00694700088934,
+      "cost_usd": 0.0000149,
+      "input_tokens": 94,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t090",
+      "tags": [
+        "technical"
+      ],
+      "input": "The app crash happens on startup and we cannot work",
+      "expected": {
+        "category": "technical",
+        "priority": "high"
+      },
+      "output": {
+        "category": "technical",
+        "priority": "high"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "The app crash happens on startup and we cannot work",
+          "output": "{\"category\": \"technical\", \"priority\": \"high\"}",
+          "input_tokens": 94,
+          "output_tokens": 11,
+          "latency_ms": 12.37590500022634,
+          "cost_usd": 0.0000149,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 12.409912000293843,
+      "cost_usd": 0.0000149,
+      "input_tokens": 94,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t091",
+      "tags": [
+        "account"
+      ],
+      "input": "I am locked out of my account and cannot log in",
+      "expected": {
+        "category": "account",
+        "priority": "high"
+      },
+      "output": {
+        "category": "account",
+        "priority": "high"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "I am locked out of my account and cannot log in",
+          "output": "{\"category\": \"account\", \"priority\": \"high\"}",
+          "input_tokens": 93,
+          "output_tokens": 10,
+          "latency_ms": 18.220488000224577,
+          "cost_usd": 0.0000143,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 18.26209499995457,
+      "cost_usd": 0.0000143,
+      "input_tokens": 93,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t092",
+      "tags": [
+        "account"
+      ],
+      "input": "How do I change my email address on the profile?",
+      "expected": {
+        "category": "account",
+        "priority": "low"
+      },
+      "output": {
+        "category": "account",
+        "priority": "low"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "How do I change my email address on the profile?",
+          "output": "{\"category\": \"account\", \"priority\": \"low\"}",
+          "input_tokens": 93,
+          "output_tokens": 10,
+          "latency_ms": 11.274540000158595,
+          "cost_usd": 0.0000143,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 11.302806000458077,
+      "cost_usd": 0.0000143,
+      "input_tokens": 93,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t093",
+      "tags": [
+        "account"
+      ],
+      "input": "I forgot my password and the reset link has expired",
+      "expected": {
+        "category": "account",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "account",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "I forgot my password and the reset link has expired",
+          "output": "{\"category\": \"account\", \"priority\": \"medium\"}",
+          "input_tokens": 94,
+          "output_tokens": 11,
+          "latency_ms": 17.16845700138947,
+          "cost_usd": 0.0000149,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 17.195185002492508,
+      "cost_usd": 0.0000149,
+      "input_tokens": 94,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t094",
+      "tags": [
+        "account"
+      ],
+      "input": "Is it possible to enable two-factor login for my team?",
+      "expected": {
+        "category": "account",
+        "priority": "low"
+      },
+      "output": {
+        "category": "account",
+        "priority": "low"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "Is it possible to enable two-factor login for my team?",
+          "output": "{\"category\": \"account\", \"priority\": \"low\"}",
+          "input_tokens": 95,
+          "output_tokens": 10,
+          "latency_ms": 17.096899999160087,
+          "cost_usd": 0.0000145,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 17.1435019983619,
+      "cost_usd": 0.0000145,
+      "input_tokens": 95,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t095",
+      "tags": [
+        "account"
+      ],
+      "input": "My username shows the old company name",
+      "expected": {
+        "category": "account",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "account",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "My username shows the old company name",
+          "output": "{\"category\": \"account\", \"priority\": \"medium\"}",
+          "input_tokens": 91,
+          "output_tokens": 11,
+          "latency_ms": 19.152243999997154,
+          "cost_usd": 0.000014599999999999999,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 19.226708998758113,
+      "cost_usd": 0.000014599999999999999,
+      "input_tokens": 91,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t096",
+      "tags": [
+        "shipping"
+      ],
+      "input": "My package has not arrived and the tracking has not updated in a week",
+      "expected": {
+        "category": "shipping",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "shipping",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "My package has not arrived and the tracking has not updated in a week",
+          "output": "{\"category\": \"shipping\", \"priority\": \"medium\"}",
+          "input_tokens": 99,
+          "output_tokens": 11,
+          "latency_ms": 22.798829999373993,
+          "cost_usd": 0.0000154,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 22.825281997938873,
+      "cost_usd": 0.0000154,
+      "input_tokens": 99,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t097",
+      "tags": [
+        "shipping"
+      ],
+      "input": "The courier marked it delivered but nothing came, urgent please",
+      "expected": {
+        "category": "shipping",
+        "priority": "high"
+      },
+      "output": {
+        "category": "shipping",
+        "priority": "high"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "The courier marked it delivered but nothing came, urgent please",
+          "output": "{\"category\": \"shipping\", \"priority\": \"high\"}",
+          "input_tokens": 97,
+          "output_tokens": 11,
+          "latency_ms": 17.834080001193797,
+          "cost_usd": 0.000015200000000000002,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 17.866213998786407,
+      "cost_usd": 0.000015200000000000002,
+      "input_tokens": 97,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t098",
+      "tags": [
+        "shipping"
+      ],
+      "input": "Curious when the next batch will be shipped",
+      "expected": {
+        "category": "shipping",
+        "priority": "low"
+      },
+      "output": {
+        "category": "shipping",
+        "priority": "low"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "Curious when the next batch will be shipped",
+          "output": "{\"category\": \"shipping\", \"priority\": \"low\"}",
+          "input_tokens": 92,
+          "output_tokens": 10,
+          "latency_ms": 17.54898599756416,
+          "cost_usd": 0.000014200000000000001,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 17.578547998709837,
+      "cost_usd": 0.000014200000000000001,
+      "input_tokens": 92,
+      "output_tokens": 10,
+      "error": null
+    },
+    {
+      "case_id": "t099",
+      "tags": [
+        "shipping"
+      ],
+      "input": "The delivery address label has a typo",
+      "expected": {
+        "category": "shipping",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "shipping",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "The delivery address label has a typo",
+          "output": "{\"category\": \"shipping\", \"priority\": \"medium\"}",
+          "input_tokens": 91,
+          "output_tokens": 11,
+          "latency_ms": 8.231179002905264,
+          "cost_usd": 0.000014599999999999999,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 8.26529600089998,
+      "cost_usd": 0.000014599999999999999,
+      "input_tokens": 91,
+      "output_tokens": 11,
+      "error": null
+    },
+    {
+      "case_id": "t100",
+      "tags": [
+        "shipping"
+      ],
+      "input": "Tracking says my package arrived at the wrong city",
+      "expected": {
+        "category": "shipping",
+        "priority": "medium"
+      },
+      "output": {
+        "category": "shipping",
+        "priority": "medium"
+      },
+      "passed": true,
+      "score": 1.0,
+      "scores": [
+        {
+          "name": "valid_json",
+          "passed": true,
+          "score": 1.0,
+          "reason": "valid",
+          "required": true
+        },
+        {
+          "name": "correct_fields",
+          "passed": true,
+          "score": 1.0,
+          "reason": "all fields match",
+          "required": true
+        }
+      ],
+      "calls": [
+        {
+          "model": "simulated-llm",
+          "prompt": "Tracking says my package arrived at the wrong city",
+          "output": "{\"category\": \"shipping\", \"priority\": \"medium\"}",
+          "input_tokens": 94,
+          "output_tokens": 11,
+          "latency_ms": 16.463045998534653,
+          "cost_usd": 0.0000149,
+          "purpose": "app",
+          "error": null
+        }
+      ],
+      "latency_ms": 16.490185997099616,
+      "cost_usd": 0.0000149,
+      "input_tokens": 94,
+      "output_tokens": 11,
+      "error": null
+    }
+  ]
+}

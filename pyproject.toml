@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gauge-eval"
+version = "0.1.0"
+description = "Regression-test, trace and cost-track any LLM app: datasets, scorers, per-commit history and a CI gate."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Hamza Hameed" }]
+dependencies = [
+  "pydantic>=2.6",
+  "pyyaml>=6.0",
+  "sqlalchemy>=2.0",
+  "httpx>=0.27",
+  "jsonschema>=4.20",
+]
+
+[project.optional-dependencies]
+server = ["fastapi>=0.110", "uvicorn>=0.29", "psycopg[binary]>=3.1", "streamlit>=1.36", "pandas>=2.0"]
+dev = ["pytest>=8", "httpx>=0.27"]
+
+[project.scripts]
+gauge = "gauge.cli:main"
+
+[project.entry-points.pytest11]
+gauge = "gauge.pytest_plugin"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,14 @@
+# Judge calibration: does the LLM judge agree with human labels?
+#   export ANTHROPIC_API_KEY=...
+#   gauge calibrate -c examples/calibration/gauge.yml --labels examples/calibration/labels.jsonl --judge-mode live
+# Recorded replies are cached in judge.cassette.jsonl so the result can be re-checked offline with --judge-mode replay.
+name: judge-calibration
+dataset: ../support_bot/dataset.jsonl   # unused by `calibrate`; required by the suite schema
+app: support_bot.app:triage
+judge:
+  provider: anthropic
+  model: claude-haiku-5-5
+  cassette: judge.cassette.jsonl
+scorers:
+  - type: rag_faithfulness
+    threshold: 0.8

@@ -1,0 +1,66 @@
+# Self-hosted Gauge: Postgres + ingest API + Streamlit dashboard.
+#   cp .env.example .env   (set POSTGRES_PASSWORD and GAUGE_TOKEN)
+#   docker compose --env-file .env up -d --build
+name: gauge
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: gauge
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: gauge
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U gauge -d gauge"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    networks: [default]
+
+  api:
+    build: .
+    restart: unless-stopped
+    environment:
+      GAUGE_DB: postgresql://gauge:${POSTGRES_PASSWORD}@postgres:5432/gauge
+      GAUGE_TOKEN: ${GAUGE_TOKEN:?set GAUGE_TOKEN in .env}
+      GAUGE_PUBLIC_READ: ${GAUGE_PUBLIC_READ:-1}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/healthz')"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    ports:
+      - "127.0.0.1:${GAUGE_API_PORT:-8810}:8000"
+    networks: [default, ingress_default]
+
+  dashboard:
+    build: .
+    restart: unless-stopped
+    command: ["streamlit", "run", "/app/dashboard.py", "--server.port=8501", "--server.address=0.0.0.0",
+              "--server.headless=true", "--browser.gatherUsageStats=false", "--server.fileWatcherType=none"]
+    environment:
+      GAUGE_DB: postgresql://gauge:${POSTGRES_PASSWORD}@postgres:5432/gauge
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8501/_stcore/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    ports:
+      - "127.0.0.1:${GAUGE_UI_PORT:-8811}:8501"
+    networks: [default, ingress_default]
+
+volumes:
+  pgdata:
+
+networks:
+  ingress_default:
+    external: true

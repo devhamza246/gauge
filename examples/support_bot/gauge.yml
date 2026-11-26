@@ -1,0 +1,23 @@
+name: support-bot
+dataset: dataset.jsonl
+app: support_bot.app:triage
+concurrency: 8
+pricing:
+  simulated-llm: { input: 0.10, output: 0.50 }   # $ per million tokens
+scorers:
+  - type: json_schema
+    name: valid_json
+    schema:
+      type: object
+      required: [category, priority]
+      properties:
+        category: { enum: [billing, technical, account, shipping] }
+        priority: { enum: [low, medium, high] }
+  - type: field_match
+    name: correct_fields
+    fields: [category, priority]
+thresholds:
+  max_pass_rate_drop: 0.02
+  max_new_failures: 0
+  max_cost_increase: 0.25
+  max_latency_increase: 5.0   # generous: shared CI runners are noisy and this app's latency is simulated

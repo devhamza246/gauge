@@ -1,0 +1,20 @@
+{"id": "c01", "context": ["Refunds are available within 30 days of purchase for annual plans."], "output": "You can get a refund within 30 days of purchase on an annual plan.", "human_pass": true}
+{"id": "c02", "context": ["Refunds are available within 30 days of purchase for annual plans."], "output": "Refunds are available for 90 days on all plans.", "human_pass": false}
+{"id": "c03", "context": ["The Team plan includes 10 seats and 5,000 API requests per minute."], "output": "The Team plan has 10 seats and allows 5,000 API requests per minute.", "human_pass": true}
+{"id": "c04", "context": ["The Team plan includes 10 seats and 5,000 API requests per minute."], "output": "The Team plan has unlimited seats and 5,000 API requests per minute.", "human_pass": false}
+{"id": "c05", "context": ["Support replies within 4 business hours on the Business plan."], "output": "Business plan customers get a reply within 4 business hours.", "human_pass": true}
+{"id": "c06", "context": ["Support replies within 4 business hours on the Business plan."], "output": "Business plan customers get a reply within 1 hour, 24/7.", "human_pass": false}
+{"id": "c07", "context": ["Data is stored in the EU (Frankfurt) region and encrypted at rest with AES-256."], "output": "Your data lives in Frankfurt and is encrypted at rest using AES-256.", "human_pass": true}
+{"id": "c08", "context": ["Data is stored in the EU (Frankfurt) region and encrypted at rest with AES-256."], "output": "Your data is stored in Virginia and encrypted with AES-256.", "human_pass": false}
+{"id": "c09", "context": ["Single sign-on (SAML) is available on the Enterprise plan only."], "output": "SAML single sign-on is only offered on the Enterprise plan.", "human_pass": true}
+{"id": "c10", "context": ["Single sign-on (SAML) is available on the Enterprise plan only."], "output": "SAML single sign-on is included in every paid plan.", "human_pass": false}
+{"id": "c11", "context": ["The mobile app supports iOS 16 and later and Android 12 and later."], "output": "The app works on iOS 16+ and Android 12+.", "human_pass": true}
+{"id": "c12", "context": ["The mobile app supports iOS 16 and later and Android 12 and later."], "output": "The app works on iOS 14+ and Android 12+, and also has a Windows Phone version.", "human_pass": false}
+{"id": "c13", "context": ["Invoices are issued on the first day of each month and are due within 14 days."], "output": "Invoices go out on the 1st of the month and are due 14 days later.", "human_pass": true}
+{"id": "c14", "context": ["Invoices are issued on the first day of each month and are due within 14 days."], "output": "Invoices are issued on the 15th and are due within 30 days.", "human_pass": false}
+{"id": "c15", "context": ["Exports are available as CSV and JSON. PDF export is not supported."], "output": "You can export your data as CSV or JSON; PDF export is not supported.", "human_pass": true}
+{"id": "c16", "context": ["Exports are available as CSV and JSON. PDF export is not supported."], "output": "You can export as CSV, JSON or PDF.", "human_pass": false}
+{"id": "c17", "context": ["Accounts inactive for 12 months are archived. Archived accounts can be restored on request."], "output": "Accounts that are inactive for a year get archived, and you can ask us to restore them.", "human_pass": true}
+{"id": "c18", "context": ["Accounts inactive for 12 months are archived. Archived accounts can be restored on request."], "output": "Inactive accounts are deleted permanently after 12 months.", "human_pass": false}
+{"id": "c19", "context": ["Webhooks are retried up to 5 times with exponential backoff."], "output": "Failed webhooks are retried up to five times with exponential backoff.", "human_pass": true}
+{"id": "c20", "context": ["Webhooks are retried up to 5 times with exponential backoff."], "output": "Failed webhooks are retried every minute until they succeed.", "human_pass": false}

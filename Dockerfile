@@ -1,0 +1,11 @@
+FROM python:3.12-slim
+
+ENV PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1
+WORKDIR /app
+COPY pyproject.toml README.md ./
+COPY src ./src
+RUN pip install ".[server]" && cp src/gauge/server/dashboard.py /app/dashboard.py \
+ && useradd --create-home --uid 10001 gauge
+USER gauge
+EXPOSE 8000 8501
+CMD ["uvicorn", "gauge.server.api:app", "--host", "0.0.0.0", "--port", "8000"]
