@@ -105,7 +105,7 @@ for case in failing[:50]:
 run_tour("gauge", [
     {"title": "Welcome to Gauge", "body": "Gauge tests an AI feature against a fixed set of examples on every code change, so you can see whether "
      "a change made answers better or worse. This tour explains what you are looking at. Use Next, or press Esc to skip."},
-    {"sel": '[data-testid="stMetric"]', "title": "Latest run at a glance",
+    {"sel": '[data-testid="stMain"] [data-testid="stHorizontalBlock"]', "title": "Latest run at a glance",
      "body": "Pass rate, cases passed, cost per run and slowest-response time, each compared with the previous run."},
     {"sel": '[data-testid="stVegaLiteChart"]', "title": "Trends across runs",
      "body": "Did quality drop, or cost and latency creep up, after a change? Each point is one run, oldest to newest."},
